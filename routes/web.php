@@ -35,3 +35,27 @@ Route::get('loginWithOtp', [App\http\controllers\UserinformationController::clas
 Route::post('sendOtp', [App\http\controllers\UserinformationController::class, 'sendOtp']);
 Route::post('newregister', [App\http\controllers\UserinformationController::class, 'register'])->name('newregister');
 //end otp login
+
+
+//Facebook Login URL
+Route::prefix('facebook')->name('facebook.')->group( function(){
+    Route::get('auth', [App\Http\Controllers\FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [App\Http\Controllers\FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
+
+//end facebook login
+
+// Google login
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+
+// Facebook login
+Route::get('login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
+
+
+
+//begin admin Dashboard
+Route::get('/admin/index', [App\Http\Controllers\DashboardController::class, 'admin_index'])->name('admin_index');
+
+//end Adnmin

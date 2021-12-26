@@ -12,11 +12,11 @@ class DashboardController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-      $this->middleware('auth');
-        
-    }
+    // public function __construct()
+    // {
+    //   $this->middleware('auth');
+    //
+    // }
 
     /**
      * Show the application dashboard.
@@ -26,5 +26,9 @@ class DashboardController extends Controller
 
     function index(){
       return view('index');
+    }
+
+    function admin_index(){
+      return view('Dashboard.admin_index');
     }
 }
