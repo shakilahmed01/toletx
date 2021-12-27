@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class DashboardController extends Controller
 {
     //
@@ -29,6 +29,15 @@ class DashboardController extends Controller
     }
 
     function admin_index(){
-      return view('Dashboard.admin_index');
+      $user=User::all();
+      return view('Dashboard.admin_index',compact('user'));
+    }
+
+    function custom_login(){
+      return view('Dashboard.custom_login.login');
+    }
+
+    function custom_register(){
+      return view('Dashboard.custom_login.register');
     }
 }

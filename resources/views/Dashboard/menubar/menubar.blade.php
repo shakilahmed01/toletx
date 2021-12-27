@@ -1,8 +1,8 @@
 <div class="left-side-bar">
   <div class="brand-logo">
     <a href="{{route('home')}}">
-      <img src="{{asset('Dashboard/vendors/images/deskapp-logo.svg')}}" alt="" class="dark-logo">
-      <img src="{{asset('Dashboard/vendors/images/deskapp-logo-white.svg')}}" alt="" class="light-logo">
+      <img src="{{asset('Dashboard/vendors/images/logo.png')}}" alt="" class="dark-logo">
+      <img src="{{asset('Dashboard/vendors/images/logo.png')}}" alt="" class="light-logo">
     </a>
     <div class="close-sidebar" data-toggle="left-sidebar-close">
       <i class="ion-close-round"></i>
@@ -99,7 +99,7 @@
           </a>
           <ul class="submenu">
             <li><a href="video-player.html">Video Player</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="{{route('custom_login')}}">Login</a></li>
             <li><a href="forgot-password.html">Forgot Password</a></li>
             <li><a href="reset-password.html">Reset Password</a></li>
           </ul>

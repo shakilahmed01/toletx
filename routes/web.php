@@ -57,5 +57,7 @@ Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController
 
 //begin admin Dashboard
 Route::get('/admin/index', [App\Http\Controllers\DashboardController::class, 'admin_index'])->name('admin_index');
+Route::get('/custom/login', [App\Http\Controllers\DashboardController::class, 'custom_login'])->name('custom_login');
+Route::get('/custom/register', [App\Http\Controllers\DashboardController::class, 'custom_register'])->name('custom_register');
 
 //end Adnmin
