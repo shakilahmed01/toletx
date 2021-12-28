@@ -62,15 +62,27 @@
 								<section>
 									<div class="form-wrap max-width-600 mx-auto">
 										<div class="form-group row">
-											<label class="col-sm-4 col-form-label">Email Address*</label>
+											<label class="col-sm-4 col-form-label">Name</label>
 											<div class="col-sm-8">
-												<input type="email" class="form-control">
+												<input type="text" name="name" class="form-control">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-4 col-form-label">Username*</label>
+											<label class="col-sm-4 col-form-label">Email Address*</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control">
+												<input type="email" name="email" class="form-control">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Mobile Number</label>
+											<div class="col-sm-8">
+												<input type="text" name="phone" class="form-control">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Photo</label>
+											<div class="col-sm-8">
+												<input type="file" name="photo" class="form-control">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -92,7 +104,13 @@
 								<section>
 									<div class="form-wrap max-width-600 mx-auto">
 										<div class="form-group row">
-											<label class="col-sm-4 col-form-label">Full Name*</label>
+											<label class="col-sm-4 col-form-label">Father Name*</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label">Mother Name*</label>
 											<div class="col-sm-8">
 												<input type="text" class="form-control">
 											</div>

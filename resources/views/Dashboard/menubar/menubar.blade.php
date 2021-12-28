@@ -23,25 +23,165 @@
         </li>
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle">
-            <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
+            <span class="micon dw dw-library"></span><span class="mtext">Room</span>
           </a>
           <ul class="submenu">
-            <li><a href="form-basic.html">Form Basic</a></li>
-            <li><a href="advanced-components.html">Advanced Components</a></li>
-            <li><a href="form-wizard.html">Form Wizard</a></li>
-            <li><a href="html5-editor.html">HTML5 Editor</a></li>
-            <li><a href="form-pickers.html">Form Pickers</a></li>
-            <li><a href="image-cropper.html">Image Cropper</a></li>
-            <li><a href="image-dropzone.html">Image Dropzone</a></li>
+            <li><a href="basic-table.html">Add Room</a></li>
+            <li><a href="datatable.html">List Room</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Apartment</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Apartment</a></li>
+            <li><a href="datatable.html">List Apartment</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle">
-            <span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+            <span class="micon dw dw-library"></span><span class="mtext">Parking Spot</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Basic Tables</a></li>
-            <li><a href="datatable.html">DataTables</a></li>
+            <li><a href="basic-table.html">Add Parking Spot</a></li>
+            <li><a href="datatable.html">List Parking Spot</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Hotel</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="{{route('add_hotel')}}">Add Hotel</a></li>
+            <li><a href="datatable.html">List Hotel</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Hostel</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Hostel</a></li>
+            <li><a href="datatable.html">List Hostel</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Office</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Office</a></li>
+            <li><a href="datatable.html">List Office</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Land</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Land</a></li>
+            <li><a href="datatable.html">List Land</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Community Center</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Community Center</a></li>
+            <li><a href="datatable.html">List Community Center</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Shooting Spot</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Shooting Spot</a></li>
+            <li><a href="datatable.html">List Shooting Spot</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Shop</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Shop</a></li>
+            <li><a href="datatable.html">List Shop</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Factory</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Factory</a></li>
+            <li><a href="datatable.html">List Factory</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Warehouse</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Warehouse</a></li>
+            <li><a href="datatable.html">List Warehouse</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Pond</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Pond</a></li>
+            <li><a href="datatable.html">List Pond</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Swimming Pool</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Swimming Pool</a></li>
+            <li><a href="datatable.html">List Swimming Pool</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Bilboard</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Bilboard</a></li>
+            <li><a href="datatable.html">List Bilboard</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Rooftop</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Rooftop</a></li>
+            <li><a href="datatable.html">List Rooftop</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Restaurant</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Restaurant</a></li>
+            <li><a href="datatable.html">List Restaurant</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Gallery</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="basic-table.html">Add Gallery</a></li>
+            <li><a href="datatable.html">List Gallery</a></li>
           </ul>
         </li>
         <li>

@@ -12,11 +12,11 @@ class DashboardController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //   $this->middleware('auth');
-    //
-    // }
+    public function __construct()
+    {
+      $this->middleware('auth');
+
+    }
 
     /**
      * Show the application dashboard.
@@ -39,5 +39,9 @@ class DashboardController extends Controller
 
     function custom_register(){
       return view('Dashboard.custom_login.register');
+    }
+
+    function add_hotel(){
+      return view('Dashboard.add_hotel');
     }
 }
