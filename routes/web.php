@@ -59,6 +59,25 @@ Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController
 Route::get('/admin/index', [App\Http\Controllers\DashboardController::class, 'admin_index'])->name('admin_index');
 Route::get('/custom/login', [App\Http\Controllers\DashboardController::class, 'custom_login'])->name('custom_login');
 Route::get('/custom/register', [App\Http\Controllers\DashboardController::class, 'custom_register'])->name('custom_register');
+//begin hotel
 Route::get('/add/hotel', [App\Http\Controllers\DashboardController::class, 'add_hotel'])->name('add_hotel');
+Route::post('/post/hotel', [App\Http\Controllers\DashboardController::class, 'post_hotel_information'])->name('post_hotel_information');
+Route::get('/list/hotel', [App\Http\Controllers\DashboardController::class, 'list_hotel'])->name('list_hotel');
+Route::get('/hotel/edit/{id}',[App\Http\Controllers\DashboardController::class, 'hotel_edit'])->name('hotel_edit');
+Route::post('/hotel/update',[App\Http\Controllers\DashboardController::class, 'hotel_update'])->name('hotel_update');
+Route::get('/hotel/delete/{id}',[App\Http\Controllers\DashboardController::class, 'hotel_delete'])->name('hotel_delete');
+Route::get('/hotel/restore/{id}',[App\Http\Controllers\DashboardController::class, 'hotel_restore'])->name('hotel_restore');
 
-//end Adnmin
+//end hotel
+
+//begin room
+Route::get('/add/room', [App\Http\Controllers\DashboardController::class, 'add_room'])->name('add_room');
+Route::get('/list/room', [App\Http\Controllers\DashboardController::class, 'list_room'])->name('list_room');
+Route::post('/post/room', [App\Http\Controllers\DashboardController::class, 'post_room_information'])->name('post_room_information');
+Route::get('/room/edit/{id}',[App\Http\Controllers\DashboardController::class, 'room_edit'])->name('room_edit');
+Route::post('/room/update',[App\Http\Controllers\DashboardController::class, 'room_update'])->name('room_update');
+Route::get('/room/delete/{id}',[App\Http\Controllers\DashboardController::class, 'room_delete'])->name('room_delete');
+Route::get('/room/restore/{id}',[App\Http\Controllers\DashboardController::class, 'room_restore'])->name('room_restore');
+
+//end room
+//end Admin

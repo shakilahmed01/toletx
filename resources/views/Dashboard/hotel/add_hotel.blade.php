@@ -46,29 +46,47 @@
 						</div>
 
 					</div>
-					<form>
+					@if ($message = Session::get('success'))
+												<div class="alert alert-success alert-block">
+														<button type="button" class="close" data-dismiss="alert">×</button>
+																<strong>{{ $message }}</strong>
+												</div>
+												@endif
+
+												@if (count($errors) > 0)
+														<div class="alert alert-danger">
+																<strong>Whoops!</strong> There were some problems with your input.
+																<ul>
+																		@foreach ($errors->all() as $error)
+																				<li>{{ $error }}</li>
+																		@endforeach
+																</ul>
+														</div>
+												@endif
+					<form method="POST" action="{{ route('post_hotel_information') }}" enctype="multipart/form-data">
+						@csrf
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Hotel Name</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Hotel Name">
+								<input class="form-control" type="text" name="hotel_name" placeholder="Hotel Name">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Location</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="Location" type="text">
+								<input class="form-control" name="location" placeholder="Location" type="text">
 							</div>
 						</div>
             <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Price</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="Price" type="numeric">
+								<input class="form-control" name="price" placeholder="Price" type="numeric">
 							</div>
 						</div>
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Guest Count</label>
               <div class="col-sm-12 col-md-10">
-                <select class="custom-select col-12">
+                <select class="custom-select col-12" name="guest_count">
                   <option selected="">Choose...</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -81,33 +99,33 @@
                 <div class="col-md-6 col-sm-12">
                   <label class="weight-600">Availibility</label>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <input type="checkbox" name="wifi" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Wifi</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                    <input type="checkbox" name="bathroom" class="custom-control-input" id="customCheck2">
                     <label class="custom-control-label" for="customCheck2">Bathroom</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    <input type="checkbox" name="cctv" class="custom-control-input" id="customCheck3">
                     <label class="custom-control-label" for="customCheck3">CCTV</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4">
+                    <input type="checkbox" name="lift" class="custom-control-input" id="customCheck4">
                     <label class="custom-control-label" for="customCheck4">Lift/Elevator</label>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck5">
+                    <input type="checkbox" name="furnished" class="custom-control-input" id="customCheck5">
                     <label class="custom-control-label" for="customCheck5">Furnished</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck6">
+                    <input type="checkbox" name="security" class="custom-control-input" id="customCheck6">
                     <label class="custom-control-label" for="customCheck6">Security</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="checkbox" class="custom-control-input" id="customCheck7">
+                    <input type="checkbox" name="parking" class="custom-control-input" id="customCheck7">
                     <label class="custom-control-label" for="customCheck7">Parking</label>
                   </div>
                 </div>
@@ -115,10 +133,8 @@
             </div>
             <div class="form-group">
 							<label>Photo</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input">
-								<label class="custom-file-label">Choose file</label>
-							</div>
+
+             <input type="file" name="photo">
 						</div>
 						<button class="btn btn-primary" type="submit">Submit</button>
 
@@ -134,7 +150,7 @@
 			<div class="collapse collapse-box" id="form-grid-form" >
 
 			<div class="footer-wrap pd-20 mb-20 card-box">
-				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+				toletx By <a href="https://github.com/dropways" target="_blank">Codetree</a>
 			</div>
 		</div>
 	</div>

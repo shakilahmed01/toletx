@@ -14,8 +14,21 @@ class CreateRoomsTable extends Migration
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+          $table->id();
+          $table->string('hotel_name');
+          $table->string('location');
+          $table->string('wifi')->nullable();
+          $table->string('bathroom')->nullable();
+          $table->string('cctv')->nullable();
+          $table->string('lift')->nullable();
+          $table->string('furnished')->nullable();
+          $table->string('security')->nullable();
+          $table->string('parking')->nullable();
+          $table->string('price');
+          $table->string('guest_count');
+          $table->string('photo');
+          $table->SoftDeletes();
+          $table->timestamps();
         });
     }
 

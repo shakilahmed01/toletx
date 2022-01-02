@@ -26,8 +26,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Room</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Room</a></li>
-            <li><a href="datatable.html">List Room</a></li>
+            <li><a href="{{route('add_room')}}">Add Room</a></li>
+            <li><a href="{{route('list_room')}}">List Room</a></li>
           </ul>
         </li>
 
@@ -55,7 +55,7 @@
           </a>
           <ul class="submenu">
             <li><a href="{{route('add_hotel')}}">Add Hotel</a></li>
-            <li><a href="datatable.html">List Hotel</a></li>
+            <li><a href="{{route('list_hotel')}}">List Hotel</a></li>
           </ul>
         </li>
         <li class="dropdown">
