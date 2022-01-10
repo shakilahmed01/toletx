@@ -73,9 +73,9 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Location</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Address</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="{{$list->location}}" name="location" placeholder="Location" type="text">
+								<input class="form-control" value="{{$list->address}}" name="address" placeholder="Location" type="text">
 							</div>
 						</div>
             <div class="form-group row">
@@ -85,9 +85,9 @@
 							</div>
 						</div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Guest Count</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Room Size</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="Guest Count" name="guest_count" value="{{$list->guest_count}}">
+                <input type="text" class="form-control" placeholder="Guest Count" name="room_size" value="{{$list->room_size}}">
               </div>
             </div>
             <div class="form-group">
@@ -99,12 +99,12 @@
                     <label class="custom-control-label" for="customCheck1">Wifi</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="bathroom" value="{{$list->bathroom}}" class="form-control" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">Bathroom</label>
+                    <input type="text" name="attached_toilet" value="{{$list->attached_toilet}}" class="form-control" id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">Attached toilet</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="cctv" value="{{$list->cctv}}" class="form-control" id="customCheck3">
-                    <label class="custom-control-label" for="customCheck3">CCTV</label>
+                    <input type="text" name="utilities" value="{{$list->utilities}}" class="form-control" id="customCheck3">
+                    <label class="custom-control-label" for="customCheck3">Utilities</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
                     <input type="text" name="lift" value="{{$list->lift}}" class="form-control" id="customCheck4">
@@ -117,12 +117,28 @@
                     <label class="custom-control-label" for="customCheck5">Furnished</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="security" value="{{$list->security}}" class="form-control" id="customCheck6">
-                    <label class="custom-control-label" for="customCheck6">Security</label>
+                    <input type="text" name="hot_water" value="{{$list->hot_water}}" class="form-control" id="customCheck6">
+                    <label class="custom-control-label" for="customCheck6">Hot Water</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="parking" value="{{$list->parking}}" class="form-control" id="customCheck7">
-                    <label class="custom-control-label" for="customCheck7">Parking</label>
+                    <input type="text" name="ac" value="{{$list->ac}}" class="form-control" id="customCheck7">
+                    <label class="custom-control-label" for="customCheck7">Ac </label>
+                  </div>
+									<div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="laundry" value="{{$list->laundry}}" class="form-control" id="customCheck8">
+                    <label class="custom-control-label" for="customCheck8">Laundry </label>
+                  </div>
+									<div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="cable_tv" value="{{$list->cable_tv}}" class="form-control" id="customCheck9">
+                    <label class="custom-control-label" for="customCheck9">Cable Tv </label>
+                  </div>
+									<div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="attached_varanda" value="{{$list->attached_varanda}}" class="form-control" id="customCheck10">
+                    <label class="custom-control-label" for="customCheck10">Attached Varanda</label>
+                  </div>
+									<div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="parking" value="{{$list->parking}}" class="form-control" id="customCheck10">
+                    <label class="custom-control-label" for="customCheck10">Parking</label>
                   </div>
                 </div>
               </div>

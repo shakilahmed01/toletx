@@ -33,11 +33,11 @@
 
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle">
-            <span class="micon dw dw-library"></span><span class="mtext">Apartment</span>
+            <span class="micon dw dw-library"></span><span class="mtext">Flat</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Apartment</a></li>
-            <li><a href="datatable.html">List Apartment</a></li>
+            <li><a href="{{route('add_flat')}}">Add Flat</a></li>
+            <li><a href="datatable.html">List Flat</a></li>
           </ul>
         </li>
         <li class="dropdown">

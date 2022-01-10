@@ -80,4 +80,15 @@ Route::get('/room/delete/{id}',[App\Http\Controllers\DashboardController::class,
 Route::get('/room/restore/{id}',[App\Http\Controllers\DashboardController::class, 'room_restore'])->name('room_restore');
 
 //end room
+
+
+//begin flat
+Route::get('/add/flat', [App\Http\Controllers\DashboardController::class, 'add_flat'])->name('add_flat');
+Route::get('/list/flat', [App\Http\Controllers\DashboardController::class, 'list_flat'])->name('list_flat');
+Route::post('/post/flat', [App\Http\Controllers\DashboardController::class, 'post_flat_information'])->name('post_flat_information');
+Route::get('/flat/edit/{id}',[App\Http\Controllers\DashboardController::class, 'flat_edit'])->name('flat_edit');
+Route::post('/flat/update',[App\Http\Controllers\DashboardController::class, 'flat_update'])->name('flat_update');
+Route::get('/flat/delete/{id}',[App\Http\Controllers\DashboardController::class, 'flat_delete'])->name('flat_delete');
+Route::get('/flat/restore/{id}',[App\Http\Controllers\DashboardController::class, 'flat_restore'])->name('flat_restore');
+//end flat
 //end Admin

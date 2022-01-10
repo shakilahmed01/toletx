@@ -64,17 +64,20 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
-                <th scope="col">hotel Name</th>
-                <th scope="col">hotel Location</th>
-                <th scope="col">Wifi</th>
-                <th scope="col">Bathroom</th>
-                <th scope="col">CCtv</th>
-                <th scope="col">Furnished</th>
-                <th scope="col">Lift</th>
-                <th scope="col">Security</th>
-                <th scope="col">Parking</th>
-                <th scope="col">Price</th>
-                <th scope="col">Guest Count</th>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Asking Rent/Cost + Service Charge</th>
+                <th scope="col">Room size</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Attached Toilet</th>
+                <th scope="col">Attached Varanda </th>
+								<th scope="col">Hot water</th>
+								<th scope="col">A.C</th>
+								<th scope="col">WiFi</th>
+								<th scope="col">Cable TV</th>
+								<th scope="col">Laundry</th>
+								<th scope="col">Parking</th>
+                <th scope="col">Stair/Lift</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -83,17 +86,21 @@
               @foreach($lists as $list)
               <tr>
                 <th scope="row">{{$list->id}}</th>
-                <td>{{$list->hotel_name}}</td>
-                <td>{{$list->location}}</td>
-                <td>{{$list->wifi}}</td>
-                <td>{{$list->bathroom}}</td>
-                <td>{{$list->cctv}}</td>
-                <td>{{$list->furnished}}</td>
-                <td>{{$list->lift}}</td>
-                <td>{{$list->security}}</td>
-                <td>{{$list->parking}}</td>
+								<td>{{$list->hotel_name}}</td>
+                <td>{{$list->address}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->guest_count}}</td>
+                <td>{{$list->room_size}}</td>
+                <td>{{$list->utilities}}</td>
+                <td>{{$list->attached_toilet}}</td>
+                <td>{{$list->attached_varanda}}</td>
+                <td>{{$list->hot_water}}</td>
+                <td>{{$list->ac}}</td>
+								<td>{{$list->wifi}}</td>
+								<td>{{$list->cable_tv}}</td>
+								<td>{{$list->laundry}}</td>
+                <td>{{$list->parking}}</td>
+                <td>{{$list->lift}}</td>
+
 
                 <td>
                 <img src="{{ asset('uploads/rooms') }}/{{ $list->photo }}" alt="">
@@ -125,19 +132,22 @@
 						<thead>
 							<tr>
 								<th scope="col">Id</th>
-								<th scope="col">hotel Name</th>
-								<th scope="col">hotel Location</th>
-								<th scope="col">Wifi</th>
-								<th scope="col">Bathroom</th>
-								<th scope="col">CCtv</th>
-								<th scope="col">Furnished</th>
-								<th scope="col">Lift</th>
-								<th scope="col">Security</th>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Asking Rent/Cost + Service Charge</th>
+                <th scope="col">Room size</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Attached Toilet</th>
+                <th scope="col">Attached Varanda </th>
+								<th scope="col">Hot water</th>
+								<th scope="col">A.C</th>
+								<th scope="col">WiFi</th>
+								<th scope="col">Cable TV</th>
+								<th scope="col">Laundry</th>
 								<th scope="col">Parking</th>
-								<th scope="col">Price</th>
-								<th scope="col">Guest Count</th>
-								<th scope="col">Image</th>
-								<th scope="col">Action</th>
+                <th scope="col">Stair/Lift</th>
+                <th scope="col">Image</th>
+                <th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -145,16 +155,19 @@
 							<tr>
 								<th scope="row">{{$trashed_list->id}}</th>
 								<td>{{$trashed_list->hotel_name}}</td>
-								<td>{{$trashed_list->location}}</td>
+                <td>{{$trashed_list->address}}</td>
+                <td>{{$trashed_list->price}}</td>
+                <td>{{$trashed_list->room_size}}</td>
+                <td>{{$trashed_list->utilities}}</td>
+                <td>{{$trashed_list->attached_toilet}}</td>
+                <td>{{$trashed_list->attached_varanda}}</td>
+                <td>{{$trashed_list->hot_water}}</td>
+                <td>{{$trashed_list->ac}}</td>
 								<td>{{$trashed_list->wifi}}</td>
-								<td>{{$trashed_list->bathroom}}</td>
-								<td>{{$trashed_list->cctv}}</td>
-								<td>{{$trashed_list->furnished}}</td>
-								<td>{{$trashed_list->lift}}</td>
-								<td>{{$trashed_list->security}}</td>
-								<td>{{$trashed_list->parking}}</td>
-								<td>{{$trashed_list->price}}</td>
-								<td>{{$trashed_list->guest_count}}</td>
+								<td>{{$trashed_list->cable_tv}}</td>
+								<td>{{$trashed_list->laundry}}</td>
+                <td>{{$trashed_list->parking}}</td>
+                <td>{{$trashed_list->lift}}</td>
 
 								<td>
 								<img src="{{ asset('uploads/rooms') }}/{{ $trashed_list->photo }}" alt="">

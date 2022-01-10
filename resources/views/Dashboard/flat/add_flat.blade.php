@@ -25,12 +25,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Room</h4>
+								<h4>Flat</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Add Room</li>
+									<li class="breadcrumb-item active" aria-current="page">Add Flat</li>
 								</ol>
 							</nav>
 						</div>
@@ -42,7 +42,7 @@
 					<div class="clearfix">
 						<div class="pull-left">
 							<h4 class="text-blue h4">Fillup the Input Fields</h4>
-							<p class="mb-30">Adding Room Details</p>
+							<p class="mb-30">Adding Flat Details</p>
 						</div>
 
 					</div>
@@ -63,14 +63,9 @@
 																</ul>
 														</div>
 												@endif
-					<form method="POST" action="{{ route('post_room_information') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('post_flat_information') }}" enctype="multipart/form-data">
 						@csrf
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Hotel Name</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="hotel_name" placeholder="Hotel Name">
-							</div>
-						</div>
+
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Address</label>
 							<div class="col-sm-12 col-md-10">
@@ -84,9 +79,9 @@
 							</div>
 						</div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Room Size</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Flat Size</label>
               <div class="col-sm-12 col-md-10">
-                <select class="custom-select col-12" name="room_size">
+                <select class="custom-select col-12" name="flat_size">
                   <option selected="">Choose...</option>
                   <option value="24sqr">24sqr</option>
                   <option value="36sqr">36sqr</option>
@@ -94,6 +89,13 @@
                 </select>
               </div>
             </div>
+            <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Description</label>
+							<div class="col-sm-12 col-md-10">
+                <textarea rows="4" cols="50" name="description" class="form-control">
+                  Enter text here...</textarea>
+							</div>
+						</div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6 col-sm-12">

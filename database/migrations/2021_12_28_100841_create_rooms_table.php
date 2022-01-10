@@ -16,16 +16,20 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
           $table->id();
           $table->string('hotel_name');
-          $table->string('location');
+          $table->string('address');
+          $table->string('room_size');
           $table->string('wifi')->nullable();
-          $table->string('bathroom')->nullable();
-          $table->string('cctv')->nullable();
+          $table->string('attached_toilet')->nullable();
+          $table->string('utilities')->nullable();
           $table->string('lift')->nullable();
           $table->string('furnished')->nullable();
-          $table->string('security')->nullable();
+          $table->string('attached_varanda')->nullable();
+          $table->string('hot_water')->nullable();
+          $table->string('laundry')->nullable();
+          $table->string('ac')->nullable();
+          $table->string('cable_tv')->nullable();
           $table->string('parking')->nullable();
           $table->string('price');
-          $table->string('guest_count');
           $table->string('photo');
           $table->SoftDeletes();
           $table->timestamps();
