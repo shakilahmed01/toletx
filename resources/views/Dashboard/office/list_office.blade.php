@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Flat Details</h4>
+								<h4>Office Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Flat</li>
+									<li class="breadcrumb-item active" aria-current="page">List Office</li>
 								</ol>
 							</nav>
 						</div>
@@ -66,17 +66,13 @@
                 <th scope="col">Id</th>
                 <th scope="col">Address</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Description</th>
-                <th scope="col">Flat size</th>
+                <th scope="col">Floor Level</th>
+                <th scope="col">Floor Size</th>
+                <th scope="col">Road Width</th>
+                <th scope="col">Interior Condition</th>
                 <th scope="col">Utilities</th>
-                <th scope="col">Attached Toilet</th>
-                <th scope="col">Attached Varanda </th>
-								<th scope="col">Hot water</th>
-                <th scope="col">AC</th>
-								<th scope="col">Furnished</th>
-								<th scope="col">WiFi</th>
-								<th scope="col">Cable TV</th>
-								<th scope="col">Laundry</th>
+                <th scope="col">Emergency Lift</th>
+                <th scope="col">Fire safety</th>
 								<th scope="col">Parking</th>
                 <th scope="col">Stair/Lift</th>
                 <th scope="col">Image</th>
@@ -87,31 +83,25 @@
               @foreach($lists as $list)
               <tr>
                 <th scope="row">{{$list->id}}</th>
-
                 <td>{{$list->address}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->description}}</td>
-                <td>{{$list->flat_size}}</td>
+                <td>{{$list->floor_level}}</td>
+                <td>{{$list->floor_size}}</td>
+                <td>{{$list->road_width}}</td>
+                <td>{{$list->interior_condition}}</td>
                 <td>{{$list->utilities}}</td>
-                <td>{{$list->attached_toilet}}</td>
-                <td>{{$list->attached_varanda}}</td>
-                <td>{{$list->hot_water}}</td>
-                <td>{{$list->ac}}</td>
-                <td>{{$list->furnished}}</td>
-								<td>{{$list->wifi}}</td>
-								<td>{{$list->cable_tv}}</td>
-								<td>{{$list->laundry}}</td>
+                <td>{{$list->emergency_lift}}</td>
+								<td>{{$list->fire_safety}}</td>
                 <td>{{$list->parking}}</td>
                 <td>{{$list->lift}}</td>
 
-
                 <td>
-                <img src="{{ asset('uploads/flats') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/offices') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/flat/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/office/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('flat/delete') }}/{{ $list->id }}" id="shakil" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('office/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -135,20 +125,16 @@
 					<table id="tblStocks"  class="table">
 						<thead>
 							<tr>
-								<th scope="col">Id</th>
+                <th scope="col">Id</th>
                 <th scope="col">Address</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Dscription</th>
-                <th scope="col">Flat size</th>
+                <th scope="col">Floor Level</th>
+                <th scope="col">Floor Size</th>
+                <th scope="col">Road Width</th>
+                <th scope="col">Interior Condition</th>
                 <th scope="col">Utilities</th>
-                <th scope="col">Attached Toilet</th>
-                <th scope="col">Attached Varanda </th>
-								<th scope="col">Hot water</th>
-                <th scope="col">AC</th>
-								<th scope="col">Furnished</th>
-								<th scope="col">WiFi</th>
-								<th scope="col">Cable TV</th>
-								<th scope="col">Laundry</th>
+                <th scope="col">Emergency Lift</th>
+                <th scope="col">Fire safety</th>
 								<th scope="col">Parking</th>
                 <th scope="col">Stair/Lift</th>
                 <th scope="col">Image</th>
@@ -161,26 +147,22 @@
 								<th scope="row">{{$trashed_list->id}}</th>
                 <td>{{$trashed_list->address}}</td>
                 <td>{{$trashed_list->price}}</td>
-                <td>{{$trashed_list->description}}</td>
-                <td>{{$trashed_list->flat_size}}</td>
+                <td>{{$trashed_list->floor_level}}</td>
+                <td>{{$trashed_list->floor_size}}</td>
+                <td>{{$trashed_list->road_width}}</td>
+                <td>{{$trashed_list->interior_condition}}</td>
                 <td>{{$trashed_list->utilities}}</td>
-                <td>{{$trashed_list->attached_toilet}}</td>
-                <td>{{$trashed_list->attached_varanda}}</td>
-                <td>{{$trashed_list->hot_water}}</td>
-                <td>{{$trashed_list->ac}}</td>
-                <td>{{$trashed_list->furnished}}</td>
-								<td>{{$trashed_list->wifi}}</td>
-								<td>{{$trashed_list->cable_tv}}</td>
-								<td>{{$trashed_list->laundry}}</td>
+                <td>{{$trashed_list->emergency_lift}}</td>
+								<td>{{$trashed_list->fire_safety}}</td>
                 <td>{{$trashed_list->parking}}</td>
                 <td>{{$trashed_list->lift}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/flats') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/offices') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('flat/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('office/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach
@@ -206,7 +188,7 @@
 				<!-- Contextual classes End -->
 			</div>
 			<div class="footer-wrap pd-20 mb-20 card-box">
-				toletx By <a href="https://github.com/dropways" target="_blank">codetree</a>
+				toletx By <a href="https://codetreebd.com" target="_blank">codetree</a>
 			</div>
 		</div>
 	</div>

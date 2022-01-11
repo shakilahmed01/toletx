@@ -37,7 +37,7 @@
           </a>
           <ul class="submenu">
             <li><a href="{{route('add_flat')}}">Add Flat</a></li>
-            <li><a href="datatable.html">List Flat</a></li>
+            <li><a href="{{route('list_flat')}}">List Flat</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -45,8 +45,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Parking Spot</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Parking Spot</a></li>
-            <li><a href="datatable.html">List Parking Spot</a></li>
+            <li><a href="{{route('add_parking_spot')}}">Add Parking Spot</a></li>
+            <li><a href="{{route('list_parking_spot')}}">List Parking Spot</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -63,8 +63,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Hostel</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Hostel</a></li>
-            <li><a href="datatable.html">List Hostel</a></li>
+            <li><a href="{{route('add_hostel')}}">Add Hostel</a></li>
+            <li><a href="{{route('list_hostel')}}">List Hostel</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -72,8 +72,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Office</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Office</a></li>
-            <li><a href="datatable.html">List Office</a></li>
+            <li><a href="{{route('add_office')}}">Add Office</a></li>
+            <li><a href="{{route('list_office')}}">List Office</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -81,7 +81,7 @@
             <span class="micon dw dw-library"></span><span class="mtext">Land</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Land</a></li>
+            <li><a href="{{route('add_land')}}">Add Land</a></li>
             <li><a href="datatable.html">List Land</a></li>
           </ul>
         </li>

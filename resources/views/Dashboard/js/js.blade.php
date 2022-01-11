@@ -8,3 +8,16 @@
 <script src="{{asset('Dashboard/src/plugins/datatables/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('Dashboard/src/plugins/datatables/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('Dashboard/vendors/scripts/dashboard.js')}}"></script>
+<!-- alert box -->
+<script>
+  // The function below will start the confirmation dialog
+  function confirmAction() {
+    let confirmAction = confirm("Are you sure to execute this action?");
+    if (confirmAction) {
+      alert("Action successfully executed");
+    } else {
+      alert("Please refresh the page. if click on ok button it will be deleted");
+    }
+  }
+</script>
+<!-- end alert box -->

@@ -91,4 +91,45 @@ Route::post('/flat/update',[App\Http\Controllers\DashboardController::class, 'fl
 Route::get('/flat/delete/{id}',[App\Http\Controllers\DashboardController::class, 'flat_delete'])->name('flat_delete');
 Route::get('/flat/restore/{id}',[App\Http\Controllers\DashboardController::class, 'flat_restore'])->name('flat_restore');
 //end flat
+
+//begin parking spot
+Route::get('/add/parking', [App\Http\Controllers\DashboardController::class, 'add_parking_spot'])->name('add_parking_spot');
+Route::get('/list/parking', [App\Http\Controllers\DashboardController::class, 'list_parking_spot'])->name('list_parking_spot');
+Route::post('/post/parking', [App\Http\Controllers\DashboardController::class, 'post_parking_spot_information'])->name('post_parking_spot_information');
+Route::get('/parking/edit/{id}',[App\Http\Controllers\DashboardController::class, 'parking_spot_edit'])->name('parking_spot_edit');
+Route::post('/parking/update',[App\Http\Controllers\DashboardController::class, 'parking_spot_update'])->name('parking_spot_update');
+Route::get('/parking/delete/{id}',[App\Http\Controllers\DashboardController::class, 'parking_spot_delete'])->name('parking_spot_delete');
+Route::get('/parking/restore/{id}',[App\Http\Controllers\DashboardController::class, 'parking_spot_restore'])->name('parking_spot_restore');
+//end parking spot
+
+//begin hostel
+Route::get('/list/hostel', [App\Http\Controllers\DashboardController::class,'list_hostel'])->name('list_hostel');
+Route::get('/add/hostel', [App\Http\Controllers\DashboardController::class, 'add_hostel'])->name('add_hostel');
+Route::post('/post/hostel', [App\Http\Controllers\DashboardController::class, 'post_hostel_information'])->name('post_hostel_information');
+Route::get('/hostel/edit/{id}',[App\Http\Controllers\DashboardController::class, 'hostel_edit'])->name('hostel_edit');
+Route::get('/hostel/delete/{id}',[App\Http\Controllers\DashboardController::class, 'hostel_delete'])->name('hostel_delete');
+Route::get('/hostel/restore/{id}',[App\Http\Controllers\DashboardController::class, 'hostel_restore'])->name('hostel_restore');
+Route::post('/hostel/update',[App\Http\Controllers\DashboardController::class, 'hostel_update'])->name('hostel_update');
+
+//end hostel
+
+//begin office
+Route::get('/add/office', [App\Http\Controllers\DashboardController::class, 'add_office'])->name('add_office');
+Route::get('/list/office', [App\Http\Controllers\DashboardController::class, 'list_office'])->name('list_office');
+Route::post('/post/office', [App\Http\Controllers\DashboardController::class, 'post_office_information'])->name('post_office_information');
+Route::get('/office/edit/{id}',[App\Http\Controllers\DashboardController::class, 'office_edit'])->name('office_edit');
+Route::post('/office/update',[App\Http\Controllers\DashboardController::class, 'office_update'])->name('office_update');
+Route::get('/office/delete/{id}',[App\Http\Controllers\DashboardController::class, 'office_delete'])->name('office_delete');
+Route::get('/office/restore/{id}',[App\Http\Controllers\DashboardController::class, 'office_restore'])->name('office_restore');
+//end office
+
+//begin Land
+Route::get('/add/land', [App\Http\Controllers\DashboardController::class, 'add_land'])->name('add_land');
+Route::get('/list/land', [App\Http\Controllers\DashboardController::class, 'list_land'])->name('list_land');
+Route::post('/post/land', [App\Http\Controllers\DashboardController::class, 'post_land_information'])->name('post_land_information');
+Route::get('/land/edit/{id}',[App\Http\Controllers\DashboardController::class, 'land_edit'])->name('land_edit');
+Route::post('/land/update',[App\Http\Controllers\DashboardController::class, 'land_update'])->name('land_update');
+Route::get('/land/delete/{id}',[App\Http\Controllers\DashboardController::class, 'land_delete'])->name('land_delete');
+Route::get('/land/restore/{id}',[App\Http\Controllers\DashboardController::class, 'land_restore'])->name('land_restore');
+//end Land
 //end Admin

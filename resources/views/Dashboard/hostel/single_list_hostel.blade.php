@@ -25,12 +25,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Flat</h4>
+								<h4>Hostel</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Update Flat</li>
+									<li class="breadcrumb-item active" aria-current="page">Update Hostel</li>
 								</ol>
 							</nav>
 						</div>
@@ -63,13 +63,19 @@
 																</ul>
 														</div>
 												@endif
-					<form method="POST" action="{{ route('flat_update') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('hostel_update') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
               <input type="hidden" name="id" value="{{$list->id}}">
 
 						</div>
 						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Hostel name</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value="{{$list->hostel_name}}" name="hostel_name" placeholder="Location" type="text">
+							</div>
+						</div>
+            <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Address</label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" value="{{$list->address}}" name="address" placeholder="Location" type="text">
@@ -82,17 +88,18 @@
 							</div>
 						</div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Flat Size</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Room Size</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="flat_size" value="{{$list->flat_size}}">
+                <input type="text" class="form-control" placeholder="" name="room_size" value="{{$list->room_size}}">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Description</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Room Type</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="Description" name="description" value="{{$list->description}}">
+                <input type="text" class="form-control" placeholder="" name="room_type" value="{{$list->room_type}}">
               </div>
             </div>
+
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -151,7 +158,7 @@
 
                              <div class="body">
                                  <input type="file" class="dropify" name="photo"  >
-                                 <img src="{{ asset('uploads/flats') }}/{{ $list->photo }}" alt="">
+                                 <img src="{{ asset('uploads/hostels') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
                         </div>

@@ -15,6 +15,14 @@ class CreateParkingSpotsTable extends Migration
     {
         Schema::create('parking__spots', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->string('price');
+            $table->string('floor_level');
+            $table->string('floor_height');
+            $table->string('description');
+            $table->string('vehicle_type');
+            $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

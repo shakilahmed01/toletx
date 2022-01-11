@@ -11,11 +11,11 @@ class Flat extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [
-        'hotel_name',
         'address',
-        'room_size',
-        'attached_toilet',
+        'flat_size',
+        'description',
         'utilities',
+        'attached_toilet',
         'attached_varanda',
         'hot_water',
         'laundry',

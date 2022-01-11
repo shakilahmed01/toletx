@@ -15,6 +15,13 @@ class CreateLandsTable extends Migration
     {
         Schema::create('lands', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->string('land_area');
+            $table->string('vegetations')->nullable();
+            $table->string('road_width');
+            $table->string('price');
+            $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

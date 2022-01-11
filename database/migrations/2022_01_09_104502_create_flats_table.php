@@ -15,9 +15,9 @@ class CreateFlatsTable extends Migration
     {
         Schema::create('flats', function (Blueprint $table) {
             $table->id();
-            $table->string('hotel_name');
             $table->string('address');
-            $table->string('room_size');
+            $table->string('flat_size');
+            $table->string('description');
             $table->string('wifi')->nullable();
             $table->string('attached_toilet')->nullable();
             $table->string('utilities')->nullable();

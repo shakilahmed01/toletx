@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Flat Details</h4>
+								<h4>Hostel Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Flat</li>
+									<li class="breadcrumb-item active" aria-current="page">List Hostel</li>
 								</ol>
 							</nav>
 						</div>
@@ -64,10 +64,11 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
+                <th scope="col">Hostel Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Description</th>
-                <th scope="col">Flat size</th>
+                <th scope="col">Room Size</th>
+                <th scope="col">Room Type</th>
                 <th scope="col">Utilities</th>
                 <th scope="col">Attached Toilet</th>
                 <th scope="col">Attached Varanda </th>
@@ -88,10 +89,11 @@
               <tr>
                 <th scope="row">{{$list->id}}</th>
 
+                <td>{{$list->hostel_name}}</td>
                 <td>{{$list->address}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->description}}</td>
-                <td>{{$list->flat_size}}</td>
+                <td>{{$list->room_size}}</td>
+                <td>{{$list->room_type}}</td>
                 <td>{{$list->utilities}}</td>
                 <td>{{$list->attached_toilet}}</td>
                 <td>{{$list->attached_varanda}}</td>
@@ -106,12 +108,12 @@
 
 
                 <td>
-                <img src="{{ asset('uploads/flats') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/hostels') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/flat/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/hostel/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('flat/delete') }}/{{ $list->id }}" id="shakil" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('hostel/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -136,10 +138,11 @@
 						<thead>
 							<tr>
 								<th scope="col">Id</th>
+                <th scope="col">Hostel Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Dscription</th>
-                <th scope="col">Flat size</th>
+                <th scope="col">Room Size</th>
+                <th scope="col">Room Type</th>
                 <th scope="col">Utilities</th>
                 <th scope="col">Attached Toilet</th>
                 <th scope="col">Attached Varanda </th>
@@ -159,10 +162,11 @@
 							@foreach($trashed_lists as $trashed_list)
 							<tr>
 								<th scope="row">{{$trashed_list->id}}</th>
+                <td>{{$trashed_list->hostel_name}}</td>
                 <td>{{$trashed_list->address}}</td>
                 <td>{{$trashed_list->price}}</td>
-                <td>{{$trashed_list->description}}</td>
-                <td>{{$trashed_list->flat_size}}</td>
+                <td>{{$trashed_list->room_size}}</td>
+                <td>{{$trashed_list->room_type}}</td>
                 <td>{{$trashed_list->utilities}}</td>
                 <td>{{$trashed_list->attached_toilet}}</td>
                 <td>{{$trashed_list->attached_varanda}}</td>
@@ -176,11 +180,11 @@
                 <td>{{$trashed_list->lift}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/flats') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/hostels') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('flat/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('hostel/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach
@@ -206,7 +210,7 @@
 				<!-- Contextual classes End -->
 			</div>
 			<div class="footer-wrap pd-20 mb-20 card-box">
-				toletx By <a href="https://github.com/dropways" target="_blank">codetree</a>
+				toletx By <a href="https://codetreebd.com" target="_blank">codetree</a>
 			</div>
 		</div>
 	</div>

@@ -108,7 +108,7 @@
                 <td>
                   <a href="{{ url('/room/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('room/delete') }}/{{ $list->id }}" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('room/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
                 </td>
               </tr>
           @endforeach
