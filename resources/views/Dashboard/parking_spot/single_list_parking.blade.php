@@ -25,12 +25,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Flat</h4>
+								<h4>Parking Spot</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Update Flat</li>
+									<li class="breadcrumb-item active" aria-current="page">Update Parking Spot</li>
 								</ol>
 							</nav>
 						</div>
@@ -42,7 +42,7 @@
 					<div class="clearfix">
 						<div class="pull-left">
 							<h4 class="text-blue h4">Fillup the Input Fields</h4>
-							<p class="mb-30">Updating Flat Details</p>
+							<p class="mb-30">Updating Parking Spot Details</p>
 						</div>
 
 					</div>
@@ -63,7 +63,7 @@
 																</ul>
 														</div>
 												@endif
-					<form method="POST" action="{{ route('flat_update') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('parking_spot_update') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
               <input type="hidden" name="id" value="{{$list->id}}">
@@ -75,88 +75,49 @@
 								<input class="form-control" value="{{$list->address}}" name="address" placeholder="Location" type="text">
 							</div>
 						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Floor Level</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value="{{$list->floor_level}}" name="floor_level" placeholder="Location" type="text">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Floor Height</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value="{{$list->floor_height}}" name="floor_height" placeholder="Location" type="text">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Vehicle Type</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value="{{$list->vehicle_type}}" name="vehicle_type" placeholder="Location" type="text">
+							</div>
+						</div>
             <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Price</label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" name="price" value="{{$list->price}}" placeholder="Price" type="numeric">
 							</div>
 						</div>
-            <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Flat Size</label>
-              <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="flat_size" value="{{$list->flat_size}}">
-              </div>
-            </div>
+
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Description</label>
               <div class="col-sm-12 col-md-10">
                 <input type="text" class="form-control" placeholder="Description" name="description" value="{{$list->description}}">
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <label class="weight-600">Availibility</label>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="wifi" value="{{$list->wifi}}" class="form-control" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Wifi</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="attached_toilet" value="{{$list->attached_toilet}}" class="form-control" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">Attached toilet</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="utilities" value="{{$list->utilities}}" class="form-control" id="customCheck3">
-                    <label class="custom-control-label" for="customCheck3">Utilities</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="lift" value="{{$list->lift}}" class="form-control" id="customCheck4">
-                    <label class="custom-control-label" for="customCheck4">Lift/Elevator</label>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="furnished" value="{{$list->furnished}}" class="form-control" id="customCheck5">
-                    <label class="custom-control-label" for="customCheck5">Furnished</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="hot_water" value="{{$list->hot_water}}" class="form-control" id="customCheck6">
-                    <label class="custom-control-label" for="customCheck6">Hot Water</label>
-                  </div>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="ac" value="{{$list->ac}}" class="form-control" id="customCheck7">
-                    <label class="custom-control-label" for="customCheck7">Ac </label>
-                  </div>
-									<div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="laundry" value="{{$list->laundry}}" class="form-control" id="customCheck8">
-                    <label class="custom-control-label" for="customCheck8">Laundry </label>
-                  </div>
-									<div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="cable_tv" value="{{$list->cable_tv}}" class="form-control" id="customCheck9">
-                    <label class="custom-control-label" for="customCheck9">Cable Tv </label>
-                  </div>
-									<div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="attached_varanda" value="{{$list->attached_varanda}}" class="form-control" id="customCheck10">
-                    <label class="custom-control-label" for="customCheck10">Attached Varanda</label>
-                  </div>
-									<div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="parking" value="{{$list->parking}}" class="form-control" id="customCheck10">
-                    <label class="custom-control-label" for="customCheck10">Parking</label>
-                  </div>
-                </div>
-              </div>
-            </div>
+
             <div class="form-group form-float">
                           <div class="card">
 
                              <div class="body">
                                  <input type="file" class="dropify" name="photo"  >
-                                 <img src="{{ asset('uploads/flats') }}/{{ $list->photo }}" alt="">
+                                 <img src="{{ asset('uploads/parkings') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
                         </div>
 
-						<button class="btn btn-primary" type="submit">Submit</button>
+						<button class="btn btn-primary" type="submit">Update</button>
 
 
 

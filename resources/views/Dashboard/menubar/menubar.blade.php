@@ -1,8 +1,8 @@
 <div class="left-side-bar">
   <div class="brand-logo">
     <a href="{{route('home')}}">
-      <img src="{{asset('Dashboard/vendors/images/logo.png')}}" alt="" class="dark-logo">
-      <img src="{{asset('Dashboard/vendors/images/logo.png')}}" alt="" class="light-logo">
+      <img src="{{asset('Dashboard/vendors/images/toletx_logo_main.png')}}" alt="" class="dark-logo">
+      <img src="{{asset('Dashboard/vendors/images/toletx_logo_main.png')}}" alt="" class="light-logo">
     </a>
     <div class="close-sidebar" data-toggle="left-sidebar-close">
       <i class="ion-close-round"></i>
@@ -82,7 +82,7 @@
           </a>
           <ul class="submenu">
             <li><a href="{{route('add_land')}}">Add Land</a></li>
-            <li><a href="datatable.html">List Land</a></li>
+            <li><a href="{{route('list_land')}}">List Land</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -90,8 +90,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Community Center</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Community Center</a></li>
-            <li><a href="datatable.html">List Community Center</a></li>
+            <li><a href="{{route('add_community')}}">Add Community Center</a></li>
+            <li><a href="{{route('list_community')}}">List Community Center</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -99,8 +99,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Shooting Spot</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Shooting Spot</a></li>
-            <li><a href="datatable.html">List Shooting Spot</a></li>
+            <li><a href="{{route('add_shooting')}}">Add Shooting Spot</a></li>
+            <li><a href="{{route('list_shooting')}}">List Shooting Spot</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -108,8 +108,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Shop</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Shop</a></li>
-            <li><a href="datatable.html">List Shop</a></li>
+            <li><a href="{{route('add_shop')}}">Add Shop</a></li>
+            <li><a href="{{route('list_shop')}}">List Shop</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -117,8 +117,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Factory</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Factory</a></li>
-            <li><a href="datatable.html">List Factory</a></li>
+            <li><a href="{{route('add_factory')}}">Add Factory</a></li>
+            <li><a href="{{route('list_factory')}}">List Factory</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -126,8 +126,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Warehouse</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Warehouse</a></li>
-            <li><a href="datatable.html">List Warehouse</a></li>
+            <li><a href="{{route('add_warehouse')}}">Add Warehouse</a></li>
+            <li><a href="{{route('list_warehouse')}}">List Warehouse</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -135,8 +135,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Pond</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Pond</a></li>
-            <li><a href="datatable.html">List Pond</a></li>
+            <li><a href="{{route('add_pond')}}">Add Pond</a></li>
+            <li><a href="{{route('list_pond')}}">List Pond</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -144,8 +144,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Swimming Pool</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Swimming Pool</a></li>
-            <li><a href="datatable.html">List Swimming Pool</a></li>
+            <li><a href="{{route('add_swimmingpool')}}">Add Swimming Pool</a></li>
+            <li><a href="{{route('list_swimmingpool')}}">List Swimming Pool</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -153,8 +153,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Bilboard</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Bilboard</a></li>
-            <li><a href="datatable.html">List Bilboard</a></li>
+            <li><a href="{{route('add_bilboard')}}">Add Bilboard</a></li>
+            <li><a href="{{route('list_bilboard')}}">List Bilboard</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -162,8 +162,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Rooftop</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Rooftop</a></li>
-            <li><a href="datatable.html">List Rooftop</a></li>
+            <li><a href="{{route('add_rooftop')}}">Add Rooftop</a></li>
+            <li><a href="{{route('list_rooftop')}}">List Rooftop</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -171,8 +171,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Restaurant</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Restaurant</a></li>
-            <li><a href="datatable.html">List Restaurant</a></li>
+            <li><a href="{{route('add_restuarant')}}">Add Restaurant</a></li>
+            <li><a href="{{route('list_restuarant')}}">List Restaurant</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -180,8 +180,26 @@
             <span class="micon dw dw-library"></span><span class="mtext">Gallery</span>
           </a>
           <ul class="submenu">
-            <li><a href="basic-table.html">Add Gallery</a></li>
-            <li><a href="datatable.html">List Gallery</a></li>
+            <li><a href="{{route('add_gallery')}}">Add Gallery</a></li>
+            <li><a href="{{route('list_gallery')}}">List Gallery</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Exibution Center</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="{{route('add_exibutioncenter')}}">Add Exibution Center</a></li>
+            <li><a href="{{route('list_exibutioncenter')}}">List Exibution Center</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle">
+            <span class="micon dw dw-library"></span><span class="mtext">Play Ground</span>
+          </a>
+          <ul class="submenu">
+            <li><a href="{{route('add_playground')}}">Add Play Ground</a></li>
+            <li><a href="{{route('list_playground')}}">List Play Ground</a></li>
           </ul>
         </li>
         <li>

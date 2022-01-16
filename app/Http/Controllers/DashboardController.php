@@ -13,6 +13,10 @@ use App\Models\Parking_Spot;
 use App\Models\Hostel;
 use App\Models\Office;
 use App\Models\Land;
+use App\Models\Community_Center;
+use App\Models\Shooting_Spot;
+use App\Models\Shop;
+use App\Models\Factory;
 use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
@@ -380,7 +384,7 @@ class DashboardController extends Controller
 
         function parking_spot_edit($id){
           $list=Parking_Spot::findOrFail($id);
-          return view('Dashboard.parking_spot.single_parking_list',compact('list'));
+          return view('Dashboard.parking_spot.single_list_parking',compact('list'));
         }
 
         function parking_spot_update(Request $request){
@@ -422,6 +426,10 @@ class DashboardController extends Controller
             return back();
           }
 //end parking spot
+
+
+
+
 
 //begin hostel
 
@@ -526,6 +534,12 @@ class DashboardController extends Controller
         }
 //end hostel
 
+
+
+
+
+
+
 //begin office
       function add_office(){
         return view('Dashboard.office.add_office');
@@ -619,6 +633,10 @@ class DashboardController extends Controller
         }
 //end office
 
+
+
+
+
 //begin Land
       function add_land(){
         return view('Dashboard.land.add_land');
@@ -627,7 +645,7 @@ class DashboardController extends Controller
       function post_land_information(Request $request){
 
         $land=Land::insertGetId([
-          
+
           'address'=>$request->address,
           'land_area'=>$request->land_area,
           'vegetations'=>$request->vegetations,
@@ -665,16 +683,11 @@ class DashboardController extends Controller
             $land=Land::findOrFail($request->id)->update([
 
               'address'=>$request->address,
-              'floor_level'=>$request->floor_level,
-              'floor_size'=>$request->floor_size,
+              'land_area'=>$request->land_area,
+              'vegetations'=>$request->vegetations,
               'road_width'=>$request->road_width,
-              'utilities'=>$request->utilities,
-              'interior_condition'=>$request->interior_condition,
-              'fire_safety'=>$request->fire_safety,
-              'lift'=>$request->lift,
-              'emergency_lift'=>$request->emergency_lift,
-              'parking'=>$request->parking,
               'price'=>$request->price,
+              'photo'=>$request->photo,
 
 
 
@@ -685,7 +698,7 @@ class DashboardController extends Controller
 
                 $photo_upload     =  $request ->photo;
                 $photo_extension  =  $photo_upload -> getClientOriginalExtension();
-                $photo_name       =  "toletx_office_image_". $land . "." . $photo_extension;
+                $photo_name       =  "toletx_land_image_". $land . "." . $photo_extension;
                 Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/lands/'.$photo_name),100);
                 Land::find($land)->update([
                 'photo'          => $photo_name,
@@ -706,4 +719,409 @@ class DashboardController extends Controller
           return back();
         }
 //end Land
+
+
+
+
+//begin community center
+      function add_community(){
+        return view('Dashboard.community_center.add_community_center');
+      }
+
+      function post_community_information(Request $request){
+
+        $community=Community_Center::insertGetId([
+          'community_name'=>$request->community_name,
+          'address'=>$request->address,
+          'floor_level'=>$request->floor_level,
+          'floor_size'=>$request->floor_size,
+          'road_width'=>$request->road_width,
+          'utilities'=>$request->utilities,
+          'interior_condition'=>$request->interior_condition,
+          'fire_safety'=>$request->fire_safety,
+          'lift'=>$request->lift,
+          'wifi'=>$request->wifi,
+          'garden'=>$request->garden,
+          'cooking'=>$request->cooking,
+          'sitting'=>$request->sitting,
+          'parking'=>$request->parking,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_community_image_". $community . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/communities/'.$photo_name),100);
+            Community_Center::find($community)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Community Center information have been successfully Added.');
+      }
+
+      function list_community(){
+        $lists=Community_Center::all();
+        $trashed_lists=Community_Center::onlyTrashed()->get();
+        return view('Dashboard.community_center.list_community_center',compact('lists','trashed_lists'));
+      }
+
+      function community_edit($id){
+        $list=Community_Center::findOrFail($id);
+        return view('Dashboard.community_center.single_community_center_list',compact('list'));
+      }
+
+      function community_update(Request $request){
+
+            $community=Community_Center::findOrFail($request->id)->update([
+
+              'community_name'=>$request->community_name,
+              'address'=>$request->address,
+              'floor_level'=>$request->floor_level,
+              'floor_size'=>$request->floor_size,
+              'road_width'=>$request->road_width,
+              'utilities'=>$request->utilities,
+              'interior_condition'=>$request->interior_condition,
+              'fire_safety'=>$request->fire_safety,
+              'lift'=>$request->lift,
+              'wifi'=>$request->wifi,
+              'garden'=>$request->garden,
+              'cooking'=>$request->cooking,
+              'sitting'=>$request->sitting,
+              'parking'=>$request->parking,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_community_image_". $community . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/communities/'.$photo_name),100);
+                Community_Center::find($community)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','community center information have been successfully Updated.');
+      }
+
+      function community_delete($id){
+          $list=Community_Center::findOrFail($id)->delete();
+          return back();
+        }
+
+      function community_restore($id){
+          Community_Center::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end community center
+
+
+
+//begin shooting spot
+      function add_shooting(){
+        return view('Dashboard.shooting_spot.add_shooting');
+      }
+
+      function post_shooting_information(Request $request){
+
+        $shooting=Shooting_Spot::insertGetId([
+          'shooting_name'=>$request->shooting_name,
+          'address'=>$request->address,
+          'floor_level'=>$request->floor_level,
+          'floor_size'=>$request->floor_size,
+          'road_width'=>$request->road_width,
+          'utilities'=>$request->utilities,
+          'building_condition'=>$request->building_condition,
+          'fire_safety'=>$request->fire_safety,
+          'lift'=>$request->lift,
+          'wifi'=>$request->wifi,
+          'garden'=>$request->garden,
+          'cooking'=>$request->cooking,
+          'sitting'=>$request->sitting,
+          'parking'=>$request->parking,
+          'vegetations'=>$request->vegetations,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_shooting_image_". $shooting . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/shootings/'.$photo_name),100);
+            Shooting_Spot::find($shooting)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Shooting Spot information have been successfully Added.');
+      }
+
+      function list_shooting(){
+        $lists=Shooting_Spot::all();
+        $trashed_lists=Shooting_Spot::onlyTrashed()->get();
+        return view('Dashboard.shooting_spot.list_shooting',compact('lists','trashed_lists'));
+      }
+
+      function shooting_edit($id){
+        $list=Shooting_Spot::findOrFail($id);
+        return view('Dashboard.shooting_spot.single_shooting_list',compact('list'));
+      }
+
+      function shooting_update(Request $request){
+
+            $shooting=Shooting_Spot::findOrFail($request->id)->update([
+
+              'shooting_name'=>$request->shooting_name,
+              'address'=>$request->address,
+              'floor_level'=>$request->floor_level,
+              'floor_size'=>$request->floor_size,
+              'road_width'=>$request->road_width,
+              'utilities'=>$request->utilities,
+              'building_condition'=>$request->building_condition,
+              'fire_safety'=>$request->fire_safety,
+              'lift'=>$request->lift,
+              'wifi'=>$request->wifi,
+              'garden'=>$request->garden,
+              'cooking'=>$request->cooking,
+              'sitting'=>$request->sitting,
+              'parking'=>$request->parking,
+              'vegetations'=>$request->vegetations,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_shooting_image_". $shooting . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/shootings/'.$photo_name),100);
+                Shooting_Spot::find($shooting)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Shooting Spot information have been successfully Updated.');
+      }
+
+      function shooting_delete($id){
+          $list=Shooting_Spot::findOrFail($id)->delete();
+          return back();
+        }
+
+      function shooting_restore($id){
+          Shooting_Spot::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end shooting spot
+
+
+
+//begin shop
+      function add_shop(){
+        return view('Dashboard.shop.add_shop');
+      }
+
+      function post_shop_information(Request $request){
+
+        $shop=Shop::insertGetId([
+          'address'=>$request->address,
+          'floor_level'=>$request->floor_level,
+          'floor_size'=>$request->floor_size,
+          'road_width'=>$request->road_width,
+          'utilities'=>$request->utilities,
+          'building_condition'=>$request->building_condition,
+          'fire_safety'=>$request->fire_safety,
+          'lift'=>$request->lift,
+          'interior_condition'=>$request->interior_condition,
+          'parking'=>$request->parking,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_shop_image_". $shop . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/shops/'.$photo_name),100);
+            Shop::find($shop)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Shop information have been successfully Added.');
+      }
+
+      function list_shop(){
+        $lists=Shop::all();
+        $trashed_lists=Shop::onlyTrashed()->get();
+        return view('Dashboard.shop.list_shop',compact('lists','trashed_lists'));
+      }
+
+      function shop_edit($id){
+        $list=Shop::findOrFail($id);
+        return view('Dashboard.shop.single_shop_list',compact('list'));
+      }
+
+      function shop_update(Request $request){
+
+            $shop=Shop::findOrFail($request->id)->update([
+
+              'address'=>$request->address,
+              'floor_level'=>$request->floor_level,
+              'floor_size'=>$request->floor_size,
+              'road_width'=>$request->road_width,
+              'utilities'=>$request->utilities,
+              'building_condition'=>$request->building_condition,
+              'fire_safety'=>$request->fire_safety,
+              'lift'=>$request->lift,
+              'wifi'=>$request->wifi,
+              'parking'=>$request->parking,
+              'interior_condition'=>$request->interior_condition,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_shop_image_". $shop . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/shops/'.$photo_name),100);
+                Shop::find($shop)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Shop information have been successfully Updated.');
+      }
+
+      function shop_delete($id){
+          $list=Shop::findOrFail($id)->delete();
+          return back();
+        }
+
+      function shop_restore($id){
+          Shop::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end shop
+
+
+
+//begin factory
+      function add_factory(){
+        return view('Dashboard.factory.add_factory');
+      }
+
+      function post_factory_information(Request $request){
+
+        $factory=Factory::insertGetId([
+          'factory_name'=>$request->factory_name,
+          'address'=>$request->address,
+          'floor_level'=>$request->floor_level,
+          'floor_size'=>$request->floor_size,
+          'road_width'=>$request->road_width,
+          'utilities'=>$request->utilities,
+          'building_condition'=>$request->building_condition,
+          'fire_safety'=>$request->fire_safety,
+          'lift'=>$request->lift,
+          'interior_condition'=>$request->interior_condition,
+          'drainage_system'=>$request->drainage_system,
+          'parking'=>$request->parking,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_factory_image_". $factory . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/factories/'.$photo_name),100);
+            Factory::find($factory)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Factory information have been successfully Added.');
+      }
+
+      function list_factory(){
+        $lists=Factory::all();
+        $trashed_lists=Factory::onlyTrashed()->get();
+        return view('Dashboard.factory.list_factory',compact('lists','trashed_lists'));
+      }
+
+      function factory_edit($id){
+        $list=Factory::findOrFail($id);
+        return view('Dashboard.factory.single_factory_list',compact('list'));
+      }
+
+      function factory_update(Request $request){
+
+            $factory=Factory::findOrFail($request->id)->update([
+
+              'factory_name'=>$request->factory_name,
+              'address'=>$request->address,
+              'floor_level'=>$request->floor_level,
+              'floor_size'=>$request->floor_size,
+              'road_width'=>$request->road_width,
+              'utilities'=>$request->utilities,
+              'building_condition'=>$request->building_condition,
+              'fire_safety'=>$request->fire_safety,
+              'lift'=>$request->lift,
+              'wifi'=>$request->wifi,
+              'parking'=>$request->parking,
+              'interior_condition'=>$request->interior_condition,
+              'drainage_system'=>$request->drainage_system,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_factory_image_". $factory . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/factories/'.$photo_name),100);
+                Factory::find($factory)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','factory information have been successfully Updated.');
+      }
+
+      function factory_delete($id){
+          $list=Factory::findOrFail($id)->delete();
+          return back();
+        }
+
+      function factory_restore($id){
+          Factory::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end factory
 }

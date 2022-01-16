@@ -15,9 +15,7 @@
     let confirmAction = confirm("Are you sure to execute this action?");
     if (confirmAction) {
       alert("Action successfully executed");
-    } else {
-      alert("Please refresh the page. if click on ok button it will be deleted");
-    }
+    } 
   }
 </script>
 <!-- end alert box -->

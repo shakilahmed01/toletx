@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Land Details</h4>
+								<h4>Shop Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Land</li>
+									<li class="breadcrumb-item active" aria-current="page">List Shop</li>
 								</ol>
 							</nav>
 						</div>
@@ -66,9 +66,15 @@
                 <th scope="col">Id</th>
                 <th scope="col">Address</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Land Area</th>
+                <th scope="col">Floor Level</th>
+                <th scope="col">Floor Size</th>
                 <th scope="col">Road Width</th>
-                <th scope="col">Vegetations</th>
+                <th scope="col">Building Condition</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Fire safety</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Stair/Lift</th>
+                <th scope="col">Interior Condition</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -79,17 +85,23 @@
                 <th scope="row">{{$list->id}}</th>
                 <td>{{$list->address}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->land_area}}</td>
+                <td>{{$list->floor_level}}</td>
+                <td>{{$list->floor_size}}</td>
                 <td>{{$list->road_width}}</td>
-                <td>{{$list->vegetations}}</td>
+                <td>{{$list->building_condition}}</td>
+                <td>{{$list->utilities}}</td>
+								<td>{{$list->fire_safety}}</td>
+                <td>{{$list->parking}}</td>
+                <td>{{$list->lift}}</td>
+                <td>{{$list->interior_condition}}</td>
 
                 <td>
-                <img src="{{ asset('uploads/lands') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/shops') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/land/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/shop/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('land/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('shop/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -113,14 +125,20 @@
 					<table id="tblStocks"  class="table">
 						<thead>
 							<tr>
-								<th scope="col">Id</th>
-								<th scope="col">Address</th>
-								<th scope="col">Asking Rent/Cost + Service Charge</th>
-								<th scope="col">Land Area</th>
-								<th scope="col">Road Width</th>
-								<th scope="col">Vegetations</th>
-								<th scope="col">Image</th>
-								<th scope="col">Action</th>
+                <th scope="col">Id</th>
+                <th scope="col">Address</th>
+                <th scope="col">Asking Rent/Cost + Service Charge</th>
+                <th scope="col">Floor Level</th>
+                <th scope="col">Floor Size</th>
+                <th scope="col">Road Width</th>
+                <th scope="col">Building Condition</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Fire safety</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Stair/Lift</th>
+                <th scope="col">Interior Condition</th>
+                <th scope="col">Image</th>
+                <th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -129,16 +147,22 @@
 								<th scope="row">{{$trashed_list->id}}</th>
                 <td>{{$trashed_list->address}}</td>
                 <td>{{$trashed_list->price}}</td>
-                <td>{{$trashed_list->land_area}}</td>
+                <td>{{$trashed_list->floor_level}}</td>
+                <td>{{$trashed_list->floor_size}}</td>
                 <td>{{$trashed_list->road_width}}</td>
-                <td>{{$trashed_list->vegetations}}</td>
+                <td>{{$trashed_list->building_condition}}</td>
+                <td>{{$trashed_list->utilities}}</td>
+								<td>{{$trashed_list->fire_safety}}</td>
+                <td>{{$trashed_list->parking}}</td>
+                <td>{{$trashed_list->lift}}</td>
+                <td>{{$trashed_list->interior_condition}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/lands') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/shops') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('land/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('shop/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach

@@ -92,6 +92,7 @@ Route::get('/flat/delete/{id}',[App\Http\Controllers\DashboardController::class,
 Route::get('/flat/restore/{id}',[App\Http\Controllers\DashboardController::class, 'flat_restore'])->name('flat_restore');
 //end flat
 
+
 //begin parking spot
 Route::get('/add/parking', [App\Http\Controllers\DashboardController::class, 'add_parking_spot'])->name('add_parking_spot');
 Route::get('/list/parking', [App\Http\Controllers\DashboardController::class, 'list_parking_spot'])->name('list_parking_spot');
@@ -132,4 +133,134 @@ Route::post('/land/update',[App\Http\Controllers\DashboardController::class, 'la
 Route::get('/land/delete/{id}',[App\Http\Controllers\DashboardController::class, 'land_delete'])->name('land_delete');
 Route::get('/land/restore/{id}',[App\Http\Controllers\DashboardController::class, 'land_restore'])->name('land_restore');
 //end Land
+
+//begin community center
+Route::get('/add/community', [App\Http\Controllers\DashboardController::class, 'add_community'])->name('add_community');
+Route::get('/list/community', [App\Http\Controllers\DashboardController::class, 'list_community'])->name('list_community');
+Route::post('/post/community', [App\Http\Controllers\DashboardController::class, 'post_community_information'])->name('post_community_information');
+Route::get('/community/edit/{id}',[App\Http\Controllers\DashboardController::class, 'community_edit'])->name('community_edit');
+Route::post('/community/update',[App\Http\Controllers\DashboardController::class, 'community_update'])->name('community_update');
+Route::get('/community/delete/{id}',[App\Http\Controllers\DashboardController::class, 'community_delete'])->name('community_delete');
+Route::get('/community/restore/{id}',[App\Http\Controllers\DashboardController::class, 'community_restore'])->name('community_restore');
+//end community center
+
+//begin shooting spot
+Route::get('/add/shooting', [App\Http\Controllers\DashboardController::class, 'add_shooting'])->name('add_shooting');
+Route::get('/list/shooting', [App\Http\Controllers\DashboardController::class, 'list_shooting'])->name('list_shooting');
+Route::post('/post/shooting', [App\Http\Controllers\DashboardController::class, 'post_shooting_information'])->name('post_shooting_information');
+Route::get('/shooting/edit/{id}',[App\Http\Controllers\DashboardController::class, 'shooting_edit'])->name('shooting_edit');
+Route::post('/shooting/update',[App\Http\Controllers\DashboardController::class, 'shooting_update'])->name('shooting_update');
+Route::get('/shooting/delete/{id}',[App\Http\Controllers\DashboardController::class, 'shooting_delete'])->name('shooting_delete');
+Route::get('/shooting/restore/{id}',[App\Http\Controllers\DashboardController::class, 'shooting_restore'])->name('shooting_restore');
+//end shooting spot
+
+//begin shop
+Route::get('/add/shop', [App\Http\Controllers\DashboardController::class, 'add_shop'])->name('add_shop');
+Route::get('/list/shop', [App\Http\Controllers\DashboardController::class, 'list_shop'])->name('list_shop');
+Route::post('/post/shop', [App\Http\Controllers\DashboardController::class, 'post_shop_information'])->name('post_shop_information');
+Route::get('/shop/edit/{id}',[App\Http\Controllers\DashboardController::class, 'shop_edit'])->name('shop_edit');
+Route::post('/shop/update',[App\Http\Controllers\DashboardController::class, 'shop_update'])->name('shop_update');
+Route::get('/shop/delete/{id}',[App\Http\Controllers\DashboardController::class, 'shop_delete'])->name('shop_delete');
+Route::get('/shop/restore/{id}',[App\Http\Controllers\DashboardController::class, 'shop_restore'])->name('shop_restore');
+//end shop
+
+//begin factory
+Route::get('/add/factory', [App\Http\Controllers\DashboardController::class, 'add_factory'])->name('add_factory');
+Route::get('/list/factory', [App\Http\Controllers\DashboardController::class, 'list_factory'])->name('list_factory');
+Route::post('/post/factory', [App\Http\Controllers\DashboardController::class, 'post_factory_information'])->name('post_factory_information');
+Route::get('/factory/edit/{id}',[App\Http\Controllers\DashboardController::class, 'factory_edit'])->name('factory_edit');
+Route::post('/factory/update',[App\Http\Controllers\DashboardController::class, 'factory_update'])->name('factory_update');
+Route::get('/factory/delete/{id}',[App\Http\Controllers\DashboardController::class, 'factory_delete'])->name('factory_delete');
+Route::get('/factory/restore/{id}',[App\Http\Controllers\DashboardController::class, 'factory_restore'])->name('factory_restore');
+//end factory
+
+//begin warehouse
+Route::get('/add/warehouse', [App\Http\Controllers\DashboardController::class, 'add_warehouse'])->name('add_warehouse');
+Route::get('/list/warehouse', [App\Http\Controllers\DashboardController::class, 'list_warehouse'])->name('list_warehouse');
+Route::post('/post/warehouse', [App\Http\Controllers\DashboardController::class, 'post_warehouse_information'])->name('post_warehouse_information');
+Route::get('/warehouse/edit/{id}',[App\Http\Controllers\DashboardController::class, 'warehouse_edit'])->name('warehouse_edit');
+Route::post('/warehouse/update',[App\Http\Controllers\DashboardController::class, 'warehouse_update'])->name('warehouse_update');
+Route::get('/warehouse/delete/{id}',[App\Http\Controllers\DashboardController::class, 'warehouse_delete'])->name('warehouse_delete');
+Route::get('/warehouse/restore/{id}',[App\Http\Controllers\DashboardController::class, 'warehouse_restore'])->name('warehouse_restore');
+//end warehouse
+
+//begin pond
+Route::get('/add/pond', [App\Http\Controllers\DashboardController::class, 'add_pond'])->name('add_pond');
+Route::get('/list/pond', [App\Http\Controllers\DashboardController::class, 'list_pond'])->name('list_pond');
+Route::post('/post/pond', [App\Http\Controllers\DashboardController::class, 'post_pond_information'])->name('post_pond_information');
+Route::get('/pond/edit/{id}',[App\Http\Controllers\DashboardController::class, 'pond_edit'])->name('pond_edit');
+Route::post('/pond/update',[App\Http\Controllers\DashboardController::class, 'pond_update'])->name('pond_update');
+Route::get('/pond/delete/{id}',[App\Http\Controllers\DashboardController::class, 'pond_delete'])->name('pond_delete');
+Route::get('/pond/restore/{id}',[App\Http\Controllers\DashboardController::class, 'pond_restore'])->name('pond_restore');
+//end pond
+
+//begin swimmingpool
+Route::get('/add/swimmingpool', [App\Http\Controllers\DashboardController::class, 'add_swimmingpool'])->name('add_swimmingpool');
+Route::get('/list/swimmingpool', [App\Http\Controllers\DashboardController::class, 'list_swimmingpool'])->name('list_swimmingpool');
+Route::post('/post/swimmingpool', [App\Http\Controllers\DashboardController::class, 'post_swimmingpool_information'])->name('post_swimmingpool_information');
+Route::get('/swimmingpool/edit/{id}',[App\Http\Controllers\DashboardController::class, 'swimmingpool_edit'])->name('swimmingpool_edit');
+Route::post('/swimmingpool/update',[App\Http\Controllers\DashboardController::class, 'swimmingpool_update'])->name('swimmingpool_update');
+Route::get('/swimmingpool/delete/{id}',[App\Http\Controllers\DashboardController::class, 'swimmingpool_delete'])->name('swimmingpool_delete');
+Route::get('/swimmingpool/restore/{id}',[App\Http\Controllers\DashboardController::class, 'swimmingpool_restore'])->name('swimmingpool_restore');
+//end swimmingpool
+
+//begin Bilboard
+Route::get('/add/bilboard', [App\Http\Controllers\DashboardController::class, 'add_bilboard'])->name('add_bilboard');
+Route::get('/list/bilboard', [App\Http\Controllers\DashboardController::class, 'list_bilboard'])->name('list_bilboard');
+Route::post('/post/bilboard', [App\Http\Controllers\DashboardController::class, 'post_bilboard_information'])->name('post_bilboard_information');
+Route::get('/bilboard/edit/{id}',[App\Http\Controllers\DashboardController::class, 'bilboard_edit'])->name('bilboard_edit');
+Route::post('/bilboard/update',[App\Http\Controllers\DashboardController::class, 'bilboard_update'])->name('bilboard_update');
+Route::get('/bilboard/delete/{id}',[App\Http\Controllers\DashboardController::class, 'bilboard_delete'])->name('bilboard_delete');
+Route::get('/bilboard/restore/{id}',[App\Http\Controllers\DashboardController::class, 'bilboard_restore'])->name('bilboard_restore');
+//end bilboard
+
+//begin rooftop
+Route::get('/add/rooftop', [App\Http\Controllers\DashboardController::class, 'add_rooftop'])->name('add_rooftop');
+Route::get('/list/rooftop', [App\Http\Controllers\DashboardController::class, 'list_rooftop'])->name('list_rooftop');
+Route::post('/post/rooftop', [App\Http\Controllers\DashboardController::class, 'post_rooftop_information'])->name('post_rooftop_information');
+Route::get('/rooftop/edit/{id}',[App\Http\Controllers\DashboardController::class, 'rooftop_edit'])->name('rooftop_edit');
+Route::post('/rooftop/update',[App\Http\Controllers\DashboardController::class, 'rooftop_update'])->name('rooftop_update');
+Route::get('/rooftop/delete/{id}',[App\Http\Controllers\DashboardController::class, 'rooftop_delete'])->name('rooftop_delete');
+Route::get('/rooftop/restore/{id}',[App\Http\Controllers\DashboardController::class, 'rooftop_restore'])->name('rooftop_restore');
+//end rooftop
+
+//begin restuarant
+Route::get('/add/restuarant', [App\Http\Controllers\DashboardController::class, 'add_restuarant'])->name('add_restuarant');
+Route::get('/list/restuarant', [App\Http\Controllers\DashboardController::class, 'list_restuarant'])->name('list_restuarant');
+Route::post('/post/restuarant', [App\Http\Controllers\DashboardController::class, 'post_restuarant_information'])->name('post_restuarant_information');
+Route::get('/restuarant/edit/{id}',[App\Http\Controllers\DashboardController::class, 'restuarant_edit'])->name('restuarant_edit');
+Route::post('/restuarant/update',[App\Http\Controllers\DashboardController::class, 'restuarant_update'])->name('restuarant_update');
+Route::get('/restuarant/delete/{id}',[App\Http\Controllers\DashboardController::class, 'restuarant_delete'])->name('restuarant_delete');
+Route::get('/restuarant/restore/{id}',[App\Http\Controllers\DashboardController::class, 'restuarant_restore'])->name('restuarant_restore');
+//end restuarant
+
+//begin gallery
+Route::get('/add/gallery', [App\Http\Controllers\DashboardController::class, 'add_gallery'])->name('add_gallery');
+Route::get('/list/gallery', [App\Http\Controllers\DashboardController::class, 'list_gallery'])->name('list_gallery');
+Route::post('/post/gallery', [App\Http\Controllers\DashboardController::class, 'post_gallery_information'])->name('post_gallery_information');
+Route::get('/gallery/edit/{id}',[App\Http\Controllers\DashboardController::class, 'gallery_edit'])->name('gallery_edit');
+Route::post('/gallery/update',[App\Http\Controllers\DashboardController::class, 'gallery_update'])->name('gallery_update');
+Route::get('/gallery/delete/{id}',[App\Http\Controllers\DashboardController::class, 'gallery_delete'])->name('gallery_delete');
+Route::get('/gallery/restore/{id}',[App\Http\Controllers\DashboardController::class, 'gallery_restore'])->name('gallery_restore');
+//end gallery
+
+//begin playground
+Route::get('/add/playground', [App\Http\Controllers\DashboardController::class, 'add_playground'])->name('add_playground');
+Route::get('/list/playground', [App\Http\Controllers\DashboardController::class, 'list_playground'])->name('list_playground');
+Route::post('/post/playground', [App\Http\Controllers\DashboardController::class, 'post_playground_information'])->name('post_playground_information');
+Route::get('/playground/edit/{id}',[App\Http\Controllers\DashboardController::class, 'playground_edit'])->name('playground_edit');
+Route::post('/playground/update',[App\Http\Controllers\DashboardController::class, 'playground_update'])->name('playground_update');
+Route::get('/playground/delete/{id}',[App\Http\Controllers\DashboardController::class, 'playground_delete'])->name('playground_delete');
+Route::get('/playground/restore/{id}',[App\Http\Controllers\DashboardController::class, 'playground_restore'])->name('playground_restore');
+//end playground
+
+//begin exibutioncenter
+Route::get('/add/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'add_exibutioncenter'])->name('add_exibutioncenter');
+Route::get('/list/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'list_exibutioncenter'])->name('list_exibutioncenter');
+Route::post('/post/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'post_exibutioncenter_information'])->name('post_exibutioncenter_information');
+Route::get('/exibutioncenter/edit/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_edit'])->name('exibutioncenter_edit');
+Route::post('/exibutioncenter/update',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_update'])->name('exibutioncenter_update');
+Route::get('/exibutioncenter/delete/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_delete'])->name('exibutioncenter_delete');
+Route::get('/exibutioncenter/restore/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_restore'])->name('exibutioncenter_restore');
+//end exibutioncenter
 //end Admin
