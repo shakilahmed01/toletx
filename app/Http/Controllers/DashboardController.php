@@ -17,6 +17,10 @@ use App\Models\Community_Center;
 use App\Models\Shooting_Spot;
 use App\Models\Shop;
 use App\Models\Factory;
+use App\Models\Warehouse;
+use App\Models\Pond;
+use App\Models\Swimming_Pool;
+use App\Models\Bilboard;
 use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
@@ -1124,4 +1128,369 @@ class DashboardController extends Controller
           return back();
         }
 //end factory
+
+
+
+
+//begin warehouse
+      function add_warehouse(){
+        return view('Dashboard.warehouse.add_warehouse');
+      }
+
+      function post_warehouse_information(Request $request){
+
+        $warehouse=Warehouse::insertGetId([
+          'type'=>$request->type,
+          'address'=>$request->address,
+          'floor_level'=>$request->floor_level,
+          'floor_size'=>$request->floor_size,
+          'road_width'=>$request->road_width,
+          'utilities'=>$request->utilities,
+          'building_condition'=>$request->building_condition,
+          'fire_safety'=>$request->fire_safety,
+          'lift'=>$request->lift,
+          'interior_condition'=>$request->interior_condition,
+          'drainage_system'=>$request->drainage_system,
+          'parking'=>$request->parking,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_warehouse_image_". $warehouse . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/warehouses/'.$photo_name),100);
+            Warehouse::find($warehouse)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','warehouse information have been successfully Added.');
+      }
+
+      function list_warehouse(){
+        $lists=Warehouse::all();
+        $trashed_lists=Factory::onlyTrashed()->get();
+        return view('Dashboard.warehouse.list_warehouse',compact('lists','trashed_lists'));
+      }
+
+      function warehouse_edit($id){
+        $list=Warehouse::findOrFail($id);
+        return view('Dashboard.warehouse.single_warehouse_list',compact('list'));
+      }
+
+      function warehouse_update(Request $request){
+
+            $warehouse=Warehouse::findOrFail($request->id)->update([
+
+              'type'=>$request->type,
+              'address'=>$request->address,
+              'floor_level'=>$request->floor_level,
+              'floor_size'=>$request->floor_size,
+              'road_width'=>$request->road_width,
+              'utilities'=>$request->utilities,
+              'building_condition'=>$request->building_condition,
+              'fire_safety'=>$request->fire_safety,
+              'lift'=>$request->lift,
+              'wifi'=>$request->wifi,
+              'parking'=>$request->parking,
+              'interior_condition'=>$request->interior_condition,
+              'drainage_system'=>$request->drainage_system,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_warehouse_image_". $warehouse . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/warehouses/'.$photo_name),100);
+                Warehouse::find($warehouse)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Warehouse information have been successfully Updated.');
+      }
+
+      function warehouse_delete($id){
+          $list=Warehouse::findOrFail($id)->delete();
+          return back();
+        }
+
+      function warehouse_restore($id){
+          Warehouse::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end warehouse
+
+
+
+//begin pond
+      function add_pond(){
+        return view('Dashboard.pond.add_pond');
+      }
+
+      function post_pond_information(Request $request){
+
+        $pond=Pond::insertGetId([
+          'address'=>$request->address,
+          'purpose'=>$request->purpose,
+          'pond_area'=>$request->pond_area,
+          'water_level'=>$request->water_level,
+          'road_width'=>$request->road_width,
+          'drainage_system'=>$request->drainage_system,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_pond_image_". $pond . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/ponds/'.$photo_name),100);
+            Pond::find($pond)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Pond information have been successfully Added.');
+      }
+
+      function list_pond(){
+        $lists=Pond::all();
+        $trashed_lists=Pond::onlyTrashed()->get();
+        return view('Dashboard.pond.list_pond',compact('lists','trashed_lists'));
+      }
+
+      function pond_edit($id){
+        $list=Pond::findOrFail($id);
+        return view('Dashboard.pond.single_pond_list',compact('list'));
+      }
+
+      function pond_update(Request $request){
+
+            $pond=Pond::findOrFail($request->id)->update([
+
+              'address'=>$request->address,
+              'purpose'=>$request->purpose,
+              'pond_area'=>$request->pond_area,
+              'water_level'=>$request->water_level,
+              'road_width'=>$request->road_width,
+              'drainage_system'=>$request->drainage_system,
+              'price'=>$request->price,
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_pond_image_". $pond . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/ponds/'.$photo_name),100);
+                Pond::find($pond)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Pond information have been successfully Updated.');
+      }
+
+      function pond_delete($id){
+          $list=Pond::findOrFail($id)->delete();
+          return back();
+        }
+
+      function pond_restore($id){
+          Pond::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end pond
+
+
+
+//begin swimmingpool
+      function add_swimmingpool(){
+        return view('Dashboard.swimmingpool.add_swimmingpool');
+      }
+
+      function post_swimmingpool_information(Request $request){
+
+        $swimmingpool=Swimming_Pool::insertGetId([
+          'type'=>$request->type,
+          'address'=>$request->address,
+          'size'=>$request->size,
+          'toilet'=>$request->toilet,
+          'wifi'=>$request->wifi,
+          'laundry'=>$request->laundry,
+          'change_room'=>$request->change_room,
+          'parking'=>$request->parking,
+          'laundry'=>$request->laundry,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_swimmingpool_image_". $swimmingpool . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/swimmingpools/'.$photo_name),100);
+            Swimming_Pool::find($swimmingpool)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','swimmingpool information have been successfully Added.');
+      }
+
+      function list_swimmingpool(){
+        $lists=Swimming_Pool::all();
+        $trashed_lists=Swimming_Pool::onlyTrashed()->get();
+        return view('Dashboard.swimmingpool.list_swimmingpool',compact('lists','trashed_lists'));
+      }
+
+      function swimmingpool_edit($id){
+        $list=Swimming_Pool::findOrFail($id);
+        return view('Dashboard.swimmingpool.single_swimmingpool_list',compact('list'));
+      }
+
+      function swimmingpool_update(Request $request){
+
+            $swimmingpool=Swimming_Pool::findOrFail($request->id)->update([
+
+              'type'=>$request->type,
+              'address'=>$request->address,
+              'size'=>$request->size,
+              'toilet'=>$request->toilet,
+              'wifi'=>$request->wifi,
+              'laundry'=>$request->laundry,
+              'change_room'=>$request->change_room,
+              'parking'=>$request->parking,
+              'laundry'=>$request->laundry,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_swimmingpool_image_". $swimmingpool . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/swimmingpools/'.$photo_name),100);
+                Swimming_Pool::find($swimmingpool)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','swimmingpool information have been successfully Updated.');
+      }
+
+      function swimmingpool_delete($id){
+          $list=Swimming_Pool::findOrFail($id)->delete();
+          return back();
+        }
+
+      function swimmingpool_restore($id){
+          Swimming_Pool::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end swimmingpool
+
+
+
+
+//begin billboard
+      function add_bilboard(){
+        return view('Dashboard.bilboard.add_bilboard');
+      }
+
+      function post_bilboard_information(Request $request){
+
+        $bilboard=Bilboard::insertGetId([
+          'type'=>$request->type,
+          'address'=>$request->address,
+          'size'=>$request->size,
+          'hieght'=>$request->hieght,
+          'electricity'=>$request->electricity,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_bilboard_image_". $bilboard . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/bilboards/'.$photo_name),100);
+            Bilboard::find($bilboard)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Billboard information have been successfully Added.');
+      }
+
+      function list_bilboard(){
+        $lists=Bilboard::all();
+        $trashed_lists=Bilboard::onlyTrashed()->get();
+        return view('Dashboard.bilboard.list_bilboard',compact('lists','trashed_lists'));
+      }
+
+      function bilboard_edit($id){
+        $list=Bilboard::findOrFail($id);
+        return view('Dashboard.bilboard.single_bilboard_list',compact('list'));
+      }
+
+      function bilboard_update(Request $request){
+
+            $bilboard=Bilboard::findOrFail($request->id)->update([
+
+              'type'=>$request->type,
+              'address'=>$request->address,
+              'size'=>$request->size,
+              'hieght'=>$request->hieght,
+              'electricity'=>$request->electricity,
+              'price'=>$request->price,
+
+
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_billboard_image_". $bilboard . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/bilboards/'.$photo_name),100);
+                Bilboard::find($bilboard)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Billboard information have been successfully Updated.');
+      }
+
+      function bilboard_delete($id){
+          $list=Bilboard::findOrFail($id)->delete();
+          return back();
+        }
+
+      function bilboard_restore($id){
+          Bilboard::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end billboard
 }

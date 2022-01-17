@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Factory Details</h4>
+								<h4>Swimming Pool Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Factory</li>
+									<li class="breadcrumb-item active" aria-current="page">List Swimming Pool</li>
 								</ol>
 							</nav>
 						</div>
@@ -64,19 +64,15 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
-								<th scope="col">Factory Name</th>
                 <th scope="col">Address</th>
+								<th scope="col">Type</th>
+                <th scope="col">Size</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Floor Level</th>
-                <th scope="col">Floor Size</th>
-                <th scope="col">Road Width</th>
-                <th scope="col">Building Condition</th>
-                <th scope="col">Utilities</th>
-                <th scope="col">Fire safety</th>
+                <th scope="col">Wifi</th>
+                <th scope="col">Laundry</th>
+                <th scope="col">Changing Room</th>
+                <th scope="col">Toilet</th>
                 <th scope="col">Parking</th>
-                <th scope="col">Stair/Lift</th>
-                <th scope="col">Interior Condition</th>
-                <th scope="col">Drainage System</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -85,27 +81,23 @@
               @foreach($lists as $list)
               <tr>
                 <th scope="row">{{$list->id}}</th>
-								<td>{{$list->factory_name}}</td>
                 <td>{{$list->address}}</td>
+								<td>{{$list->type}}</td>
+                <td>{{$list->size}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->floor_level}}</td>
-                <td>{{$list->floor_size}}</td>
-                <td>{{$list->road_width}}</td>
-                <td>{{$list->building_condition}}</td>
-                <td>{{$list->utilities}}</td>
-								<td>{{$list->fire_safety}}</td>
+                <td>{{$list->wifi}}</td>
+                <td>{{$list->laundry}}</td>
+                <td>{{$list->change_room}}</td>
+                <td>{{$list->toilet}}</td>
                 <td>{{$list->parking}}</td>
-                <td>{{$list->lift}}</td>
-                <td>{{$list->interior_condition}}</td>
-                <td>{{$list->drainage_system}}</td>
 
                 <td>
-                <img src="{{ asset('uploads/factories') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/swimmingpools') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/factory/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/swimmingpool/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('factory/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('swimmingpool/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -130,19 +122,15 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
-                <th scope="col">Factory Name</th>
                 <th scope="col">Address</th>
+								<th scope="col">Type</th>
+                <th scope="col">Size</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Floor Level</th>
-                <th scope="col">Floor Size</th>
-                <th scope="col">Road Width</th>
-                <th scope="col">Building Condition</th>
-                <th scope="col">Utilities</th>
-                <th scope="col">Fire safety</th>
+                <th scope="col">Wifi</th>
+                <th scope="col">Laundry</th>
+                <th scope="col">Changing Room</th>
+                <th scope="col">Toilet</th>
                 <th scope="col">Parking</th>
-                <th scope="col">Stair/Lift</th>
-                <th scope="col">Interior Condition</th>
-                <th scope="col">Drainage System</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -151,26 +139,22 @@
 							@foreach($trashed_lists as $trashed_list)
 							<tr>
 								<th scope="row">{{$trashed_list->id}}</th>
-                <td>{{$trashed_list->factory_name}}</td>
                 <td>{{$trashed_list->address}}</td>
+								<td>{{$trashed_list->type}}</td>
+                <td>{{$trashed_list->size}}</td>
                 <td>{{$trashed_list->price}}</td>
-                <td>{{$trashed_list->floor_level}}</td>
-                <td>{{$trashed_list->floor_size}}</td>
-                <td>{{$trashed_list->road_width}}</td>
-                <td>{{$trashed_list->building_condition}}</td>
-                <td>{{$trashed_list->utilities}}</td>
-								<td>{{$trashed_list->fire_safety}}</td>
+                <td>{{$trashed_list->wifi}}</td>
+                <td>{{$trashed_list->laundry}}</td>
+                <td>{{$trashed_list->change_room}}</td>
+                <td>{{$trashed_list->toilet}}</td>
                 <td>{{$trashed_list->parking}}</td>
-                <td>{{$trashed_list->lift}}</td>
-                <td>{{$trashed_list->interior_condition}}</td>
-                <td>{{$trashed_list->drainage_system}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/factories') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/swimmingpools') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('factory/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('swimmingpool/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach

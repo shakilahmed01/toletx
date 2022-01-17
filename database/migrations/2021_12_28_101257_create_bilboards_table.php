@@ -15,6 +15,14 @@ class CreateBilboardsTable extends Migration
     {
         Schema::create('bilboards', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->string('type');
+            $table->string('size');
+            $table->string('hieght');
+            $table->string('electricity')->nullable();
+            $table->string('price');
+            $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

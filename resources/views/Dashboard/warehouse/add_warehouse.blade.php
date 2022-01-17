@@ -26,12 +26,12 @@
  					<div class="row">
  						<div class="col-md-6 col-sm-12">
  							<div class="title">
- 								<h4>Billboard</h4>
+ 								<h4>Warehouse</h4>
  							</div>
  							<nav aria-label="breadcrumb" role="navigation">
  								<ol class="breadcrumb">
  									<li class="breadcrumb-item"><a href="{{route('admin_index')}}">Home</a></li>
- 									<li class="breadcrumb-item active" aria-current="page">Add Billboard Pool</li>
+ 									<li class="breadcrumb-item active" aria-current="page">Add Warehouse</li>
  								</ol>
  							</nav>
  						</div>
@@ -43,7 +43,7 @@
  					<div class="clearfix">
  						<div class="pull-left">
  							<h4 class="text-blue h4">Fillup the Input Fields</h4>
- 							<p class="mb-30">Adding Billboard Details</p>
+ 							<p class="mb-30">Adding Warehouse Details</p>
  						</div>
 
  					</div>
@@ -64,7 +64,7 @@
  																</ul>
  														</div>
  												@endif
- 					<form method="POST" action="{{ route('post_bilboard_information') }}" enctype="multipart/form-data">
+ 					<form method="POST" action="{{ route('post_warehouse_information') }}" enctype="multipart/form-data">
  						@csrf
 
             <div class="form-group row">
@@ -84,18 +84,39 @@
                <div class="col-sm-12 col-md-10">
                  <select class="custom-select col-12" name="type">
                    <option selected="">Choose...</option>
-                   <option value="bulletin">bulletin</option>
-                   <option value="painted">painted</option>
-                   <option value="Mobile">Mobile</option>
-                   <option value="classic">classic</option>
+                   <option value="grocery">grocery</option>
+                   <option value="cosmetic">cosmetic</option>
+                   <option value="medicine">medicine</option>
+                   <option value="camical">camical</option>
                  </select>
                </div>
              </div>
-
              <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Size</label>
+               <label class="col-sm-12 col-md-2 col-form-label">Floor level</label>
                <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="size">
+                 <select class="custom-select col-12" name="floor_level">
+                   <option selected="">Choose...</option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="2">3</option>
+                 </select>
+               </div>
+             </div>
+             <div class="form-group row">
+               <label class="col-sm-12 col-md-2 col-form-label">Building Condition</label>
+               <div class="col-sm-12 col-md-10">
+                 <select class="custom-select col-12" name="building_condition">
+                   <option selected="">Choose...</option>
+                   <option value="good">good</option>
+                   <option value="moderate">moderate</option>
+                   <option value="best">best</option>
+                 </select>
+               </div>
+             </div>
+             <div class="form-group row">
+               <label class="col-sm-12 col-md-2 col-form-label">Floor Area</label>
+               <div class="col-sm-12 col-md-10">
+                 <select class="custom-select col-12" name="floor_size">
                    <option selected="">Choose...</option>
                    <option value="24sqr">24sqr</option>
                    <option value="36sqr">36sqr</option>
@@ -103,28 +124,49 @@
                  </select>
                </div>
              </div>
-
              <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Hieght</label>
+               <label class="col-sm-12 col-md-2 col-form-label">Road Width</label>
                <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="hieght">
+                 <select class="custom-select col-12" name="road_width">
                    <option selected="">Choose...</option>
-                   <option value="19">19</option>
-                   <option value="16">16</option>
-                   <option value="30">30</option>
+                   <option value="8fit">8fit</option>
+                   <option value="12fit">12fit</option>
+                   <option value="16fit">16fit</option>
                  </select>
                </div>
              </div>
-
 
              <div class="form-group">
                <div class="row">
                  <div class="col-md-6 col-sm-12">
                    <label class="weight-600">Availibility</label>
                    <div class="custom-control custom-checkbox mb-5">
-                     <input type="checkbox" name="electricity" class="custom-control-input" id="customCheck1">
-                     <label class="custom-control-label" for="customCheck1">Electricity</label>
+                     <input type="checkbox" name="parking" class="custom-control-input" id="customCheck1">
+                     <label class="custom-control-label" for="customCheck1">Parking</label>
                    </div>
+ 									<div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="fire_safety" class="custom-control-input" id="customCheck2">
+                     <label class="custom-control-label" for="customCheck2">Fire Safety</label>
+                   </div>
+ 									<div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="utilities" class="custom-control-input" id="customCheck3">
+                     <label class="custom-control-label" for="customCheck3">Utilities</label>
+                   </div>
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="lift" class="custom-control-input" id="customCheck4">
+                     <label class="custom-control-label" for="customCheck4">Lift</label>
+                   </div>
+
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="interior_condition" class="custom-control-input" id="customCheck7">
+                     <label class="custom-control-label" for="customCheck7">Interior condition</label>
+                   </div>
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="drainage_system" class="custom-control-input" id="customCheck8">
+                     <label class="custom-control-label" for="customCheck8">Drainage System</label>
+                   </div>
+
+
 
                  </div>
                </div>

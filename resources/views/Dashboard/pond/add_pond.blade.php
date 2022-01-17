@@ -26,12 +26,12 @@
  					<div class="row">
  						<div class="col-md-6 col-sm-12">
  							<div class="title">
- 								<h4>Billboard</h4>
+ 								<h4>Pond</h4>
  							</div>
  							<nav aria-label="breadcrumb" role="navigation">
  								<ol class="breadcrumb">
  									<li class="breadcrumb-item"><a href="{{route('admin_index')}}">Home</a></li>
- 									<li class="breadcrumb-item active" aria-current="page">Add Billboard Pool</li>
+ 									<li class="breadcrumb-item active" aria-current="page">Add Pond</li>
  								</ol>
  							</nav>
  						</div>
@@ -43,7 +43,7 @@
  					<div class="clearfix">
  						<div class="pull-left">
  							<h4 class="text-blue h4">Fillup the Input Fields</h4>
- 							<p class="mb-30">Adding Billboard Details</p>
+ 							<p class="mb-30">Adding Pond Details</p>
  						</div>
 
  					</div>
@@ -64,7 +64,7 @@
  																</ul>
  														</div>
  												@endif
- 					<form method="POST" action="{{ route('post_bilboard_information') }}" enctype="multipart/form-data">
+ 					<form method="POST" action="{{ route('post_pond_information') }}" enctype="multipart/form-data">
  						@csrf
 
             <div class="form-group row">
@@ -80,51 +80,62 @@
  							</div>
  						</div>
              <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Type</label>
+               <label class="col-sm-12 col-md-2 col-form-label">Purpose</label>
                <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="type">
+                 <select class="custom-select col-12" name="purpose">
                    <option selected="">Choose...</option>
-                   <option value="bulletin">bulletin</option>
-                   <option value="painted">painted</option>
-                   <option value="Mobile">Mobile</option>
-                   <option value="classic">classic</option>
+                   <option value="fisheries">fisheries</option>
+                   <option value="farming">farming</option>
+                   <option value="other">other</option>
                  </select>
                </div>
              </div>
 
              <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Size</label>
+               <label class="col-sm-12 col-md-2 col-form-label">Water level</label>
                <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="size">
+                 <select class="custom-select col-12" name="water_level">
                    <option selected="">Choose...</option>
-                   <option value="24sqr">24sqr</option>
-                   <option value="36sqr">36sqr</option>
-                   <option value="18sqr">18sqr</option>
+                   <option value="50000 liter">50000 liter</option>
+                   <option value="25000 liter">25000 liter</option>
+                   <option value="100000 liter">100000 liter</option>
                  </select>
                </div>
              </div>
 
              <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Hieght</label>
+               <label class="col-sm-12 col-md-2 col-form-label">Pond Area</label>
                <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="hieght">
+                 <select class="custom-select col-12" name="pond_area">
                    <option selected="">Choose...</option>
-                   <option value="19">19</option>
-                   <option value="16">16</option>
+                   <option value="15">15</option>
+                   <option value="20">20</option>
                    <option value="30">30</option>
                  </select>
                </div>
              </div>
 
+             <div class="form-group row">
+               <label class="col-sm-12 col-md-2 col-form-label">Road Width</label>
+               <div class="col-sm-12 col-md-10">
+                 <select class="custom-select col-12" name="road_width">
+                   <option selected="">Choose...</option>
+                   <option value="8fit">8fit</option>
+                   <option value="12fit">12fit</option>
+                   <option value="16fit">16fit</option>
+                 </select>
+               </div>
+             </div>
 
              <div class="form-group">
                <div class="row">
                  <div class="col-md-6 col-sm-12">
                    <label class="weight-600">Availibility</label>
                    <div class="custom-control custom-checkbox mb-5">
-                     <input type="checkbox" name="electricity" class="custom-control-input" id="customCheck1">
-                     <label class="custom-control-label" for="customCheck1">Electricity</label>
+                     <input type="checkbox" name="drainage_system" class="custom-control-input" id="customCheck8">
+                     <label class="custom-control-label" for="customCheck8">Drainage System</label>
                    </div>
+
 
                  </div>
                </div>

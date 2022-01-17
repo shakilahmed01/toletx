@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Factory Details</h4>
+								<h4>Warehouse Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Factory</li>
+									<li class="breadcrumb-item active" aria-current="page">List Warehouse</li>
 								</ol>
 							</nav>
 						</div>
@@ -64,8 +64,8 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
-								<th scope="col">Factory Name</th>
                 <th scope="col">Address</th>
+                <th scope="col">Type</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
                 <th scope="col">Floor Level</th>
                 <th scope="col">Floor Size</th>
@@ -85,8 +85,8 @@
               @foreach($lists as $list)
               <tr>
                 <th scope="row">{{$list->id}}</th>
-								<td>{{$list->factory_name}}</td>
                 <td>{{$list->address}}</td>
+                <td>{{$list->type}}</td>
                 <td>{{$list->price}}</td>
                 <td>{{$list->floor_level}}</td>
                 <td>{{$list->floor_size}}</td>
@@ -100,12 +100,12 @@
                 <td>{{$list->drainage_system}}</td>
 
                 <td>
-                <img src="{{ asset('uploads/factories') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/warehouses') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/factory/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/warehouse/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('factory/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('warehouse/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -130,8 +130,8 @@
 						<thead>
 							<tr>
                 <th scope="col">Id</th>
-                <th scope="col">Factory Name</th>
                 <th scope="col">Address</th>
+                <th scope="col">Type</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
                 <th scope="col">Floor Level</th>
                 <th scope="col">Floor Size</th>
@@ -151,8 +151,8 @@
 							@foreach($trashed_lists as $trashed_list)
 							<tr>
 								<th scope="row">{{$trashed_list->id}}</th>
-                <td>{{$trashed_list->factory_name}}</td>
                 <td>{{$trashed_list->address}}</td>
+                <td>{{$trashed_list->type}}</td>
                 <td>{{$trashed_list->price}}</td>
                 <td>{{$trashed_list->floor_level}}</td>
                 <td>{{$trashed_list->floor_size}}</td>
@@ -166,11 +166,11 @@
                 <td>{{$trashed_list->drainage_system}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/factories') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/warehouses') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('factory/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('warehouse/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach

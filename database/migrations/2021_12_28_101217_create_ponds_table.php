@@ -15,6 +15,15 @@ class CreatePondsTable extends Migration
     {
         Schema::create('ponds', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->string('purpose');
+            $table->string('road_width');
+            $table->string('water_level');
+            $table->string('pond_area');
+            $table->string('drainage_system')->nullable();
+            $table->string('price');
+            $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

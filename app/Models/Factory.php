@@ -20,6 +20,7 @@ class Factory extends Model
         'fire_safety',
         'lift',
         'interior_condition',
+        'drainage_system',
         'parking',
         'price',
         'photo',

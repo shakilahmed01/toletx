@@ -15,6 +15,17 @@ class CreateSwimmingPoolsTable extends Migration
     {
         Schema::create('swimming__pools', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->string('type');
+            $table->string('size');
+            $table->string('wifi')->nullable();
+            $table->string('laundry')->nullable();
+            $table->string('change_room')->nullable();
+            $table->string('toilet')->nullable();
+            $table->string('parking')->nullable();
+            $table->string('price');
+            $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

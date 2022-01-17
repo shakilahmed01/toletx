@@ -26,12 +26,12 @@
  					<div class="row">
  						<div class="col-md-6 col-sm-12">
  							<div class="title">
- 								<h4>Billboard</h4>
+ 								<h4>Swimming Pool</h4>
  							</div>
  							<nav aria-label="breadcrumb" role="navigation">
  								<ol class="breadcrumb">
  									<li class="breadcrumb-item"><a href="{{route('admin_index')}}">Home</a></li>
- 									<li class="breadcrumb-item active" aria-current="page">Add Billboard Pool</li>
+ 									<li class="breadcrumb-item active" aria-current="page">Add Swimming Pool</li>
  								</ol>
  							</nav>
  						</div>
@@ -43,7 +43,7 @@
  					<div class="clearfix">
  						<div class="pull-left">
  							<h4 class="text-blue h4">Fillup the Input Fields</h4>
- 							<p class="mb-30">Adding Billboard Details</p>
+ 							<p class="mb-30">Adding Swimming Pool Details</p>
  						</div>
 
  					</div>
@@ -64,7 +64,7 @@
  																</ul>
  														</div>
  												@endif
- 					<form method="POST" action="{{ route('post_bilboard_information') }}" enctype="multipart/form-data">
+ 					<form method="POST" action="{{ route('post_swimmingpool_information') }}" enctype="multipart/form-data">
  						@csrf
 
             <div class="form-group row">
@@ -84,10 +84,10 @@
                <div class="col-sm-12 col-md-10">
                  <select class="custom-select col-12" name="type">
                    <option selected="">Choose...</option>
-                   <option value="bulletin">bulletin</option>
-                   <option value="painted">painted</option>
-                   <option value="Mobile">Mobile</option>
-                   <option value="classic">classic</option>
+                   <option value="in-grown">in-grown</option>
+                   <option value="swim">swim</option>
+                   <option value="lap">lap</option>
+                   <option value="hot tub">hot tub</option>
                  </select>
                </div>
              </div>
@@ -104,27 +104,38 @@
                </div>
              </div>
 
-             <div class="form-group row">
-               <label class="col-sm-12 col-md-2 col-form-label">Hieght</label>
-               <div class="col-sm-12 col-md-10">
-                 <select class="custom-select col-12" name="hieght">
-                   <option selected="">Choose...</option>
-                   <option value="19">19</option>
-                   <option value="16">16</option>
-                   <option value="30">30</option>
-                 </select>
-               </div>
-             </div>
-
 
              <div class="form-group">
                <div class="row">
                  <div class="col-md-6 col-sm-12">
                    <label class="weight-600">Availibility</label>
                    <div class="custom-control custom-checkbox mb-5">
-                     <input type="checkbox" name="electricity" class="custom-control-input" id="customCheck1">
-                     <label class="custom-control-label" for="customCheck1">Electricity</label>
+                     <input type="checkbox" name="parking" class="custom-control-input" id="customCheck1">
+                     <label class="custom-control-label" for="customCheck1">Parking</label>
                    </div>
+ 									<div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="change_room" class="custom-control-input" id="customCheck2">
+                     <label class="custom-control-label" for="customCheck2">Changing Room</label>
+                   </div>
+ 									<div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="toilet" class="custom-control-input" id="customCheck3">
+                     <label class="custom-control-label" for="customCheck3">Toilet</label>
+                   </div>
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="gym" class="custom-control-input" id="customCheck4">
+                     <label class="custom-control-label" for="customCheck4">Gym</label>
+                   </div>
+
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="wifi" class="custom-control-input" id="customCheck7">
+                     <label class="custom-control-label" for="customCheck7">wifi</label>
+                   </div>
+                   <div class="custom-control custom-checkbox mb-5">
+                     <input type="checkbox" name="laundry" class="custom-control-input" id="customCheck8">
+                     <label class="custom-control-label" for="customCheck8">Laundry</label>
+                   </div>
+
+
 
                  </div>
                </div>

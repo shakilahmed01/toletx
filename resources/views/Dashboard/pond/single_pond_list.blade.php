@@ -25,12 +25,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Billboard</h4>
+								<h4>Pond</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Update Billboard</li>
+									<li class="breadcrumb-item active" aria-current="page">Update Pond</li>
 								</ol>
 							</nav>
 						</div>
@@ -42,7 +42,7 @@
 					<div class="clearfix">
 						<div class="pull-left">
 							<h4 class="text-blue h4">Fillup the Input Fields</h4>
-							<p class="mb-30">Updating Billboard Details</p>
+							<p class="mb-30">Updating Pond Details</p>
 						</div>
 
 					</div>
@@ -63,7 +63,7 @@
 																</ul>
 														</div>
 												@endif
-					<form method="POST" action="{{ route('bilboard_update') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('pond_update') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
               <input type="hidden" name="id" value="{{$list->id}}">
@@ -83,37 +83,39 @@
 							</div>
 						</div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Type</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Purposes</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="type" value="{{$list->type}}">
+                <input type="text" class="form-control" placeholder="" name="purpose" value="{{$list->purpose}}">
               </div>
             </div>
-
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Size</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Water Level</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="size" value="{{$list->size}}">
+                <input type="text" class="form-control" placeholder="" name="water_level" value="{{$list->water_level}}">
               </div>
             </div>
-
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Hieght</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Pond Area</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="hieght" value="{{$list->hieght}}">
+                <input type="text" class="form-control" placeholder="" name="pond_area" value="{{$list->pond_area}}">
               </div>
             </div>
-
-
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Road Width</label>
+              <div class="col-sm-12 col-md-10">
+                <input type="text" class="form-control" placeholder="" name="road_width" value="{{$list->road_width}}">
+              </div>
+            </div>
 
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label class="weight-600">Availibility</label>
-                  <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="electricity" value="{{$list->electricity}}" class="form-control" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Electricity</label>
-                  </div>
 
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="drainage_system" value="{{$list->drainage_system}}" class="form-control" id="customCheck6">
+                    <label class="custom-control-label" for="customCheck6">Drainage System</label>
+                  </div>
 
 
               </div>
@@ -123,7 +125,7 @@
 
                              <div class="body">
                                  <input type="file" class="dropify" name="photo"  >
-                                 <img src="{{ asset('uploads/bilboards') }}/{{ $list->photo }}" alt="">
+                                 <img src="{{ asset('uploads/ponds') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
                         </div>

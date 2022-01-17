@@ -25,12 +25,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Billboard</h4>
+								<h4>Swimming Pool</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Update Billboard</li>
+									<li class="breadcrumb-item active" aria-current="page">Update Swimming Pool</li>
 								</ol>
 							</nav>
 						</div>
@@ -42,7 +42,7 @@
 					<div class="clearfix">
 						<div class="pull-left">
 							<h4 class="text-blue h4">Fillup the Input Fields</h4>
-							<p class="mb-30">Updating Billboard Details</p>
+							<p class="mb-30">Updating Swimming Pool Details</p>
 						</div>
 
 					</div>
@@ -63,7 +63,7 @@
 																</ul>
 														</div>
 												@endif
-					<form method="POST" action="{{ route('bilboard_update') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('swimmingpool_update') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
               <input type="hidden" name="id" value="{{$list->id}}">
@@ -90,30 +90,41 @@
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Size</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Road Width</label>
               <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="size" value="{{$list->size}}">
+                <input type="text" class="form-control" placeholder="" name="road_width" value="{{$list->road_width}}">
               </div>
             </div>
-
-            <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Hieght</label>
-              <div class="col-sm-12 col-md-10">
-                <input type="text" class="form-control" placeholder="" name="hieght" value="{{$list->hieght}}">
-              </div>
-            </div>
-
-
 
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label class="weight-600">Availibility</label>
                   <div class="custom-control custom-checkbox mb-5">
-                    <input type="text" name="electricity" value="{{$list->electricity}}" class="form-control" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Electricity</label>
+                    <input type="text" name="parking" value="{{$list->parking}}" class="form-control" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Parking</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="wifi" value="{{$list->fire_safety}}" class="form-control" id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">wifi</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="laundry" value="{{$list->laundry}}" class="form-control" id="customCheck3">
+                    <label class="custom-control-label" for="customCheck3">launddry</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="change_room" value="{{$list->change_room}}" class="form-control" id="customCheck4">
+                    <label class="custom-control-label" for="customCheck4">Changing Room</label>
                   </div>
 
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="toilet" value="{{$list->toilet}}" class="form-control" id="customCheck5">
+                    <label class="custom-control-label" for="customCheck5">Toilet</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-5">
+                    <input type="text" name="gym" value="{{$list->gym}}" class="form-control" id="customCheck6">
+                    <label class="custom-control-label" for="customCheck6">Gym</label>
+                  </div>
 
 
               </div>
@@ -123,7 +134,7 @@
 
                              <div class="body">
                                  <input type="file" class="dropify" name="photo"  >
-                                 <img src="{{ asset('uploads/bilboards') }}/{{ $list->photo }}" alt="">
+                                 <img src="{{ asset('uploads/warehouses') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
                         </div>
