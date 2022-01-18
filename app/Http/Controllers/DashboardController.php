@@ -21,6 +21,10 @@ use App\Models\Warehouse;
 use App\Models\Pond;
 use App\Models\Swimming_Pool;
 use App\Models\Bilboard;
+use App\Models\Rooftop;
+use App\Models\Restaurant;
+use App\Models\Exibution_Center;
+use App\Models\Play_ground;
 use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
@@ -1493,4 +1497,428 @@ class DashboardController extends Controller
           return back();
         }
 //end billboard
+
+
+
+
+//begin Rooftop
+      function add_rooftop(){
+        return view('Dashboard.rooftop.add_rooftop');
+      }
+
+      function post_rooftop_information(Request $request){
+
+        $rooftop=Rooftop::insertGetId([
+          'address'=>$request->address,
+          'floor_area'=>$request->floor_area,
+          'utilities'=>$request->utilities,
+          'shed'=>$request->shed,
+          'protection'=>$request->protection,
+          'lift'=>$request->lift,
+          'interior_condition'=>$request->interior_condition,
+          'parking'=>$request->parking,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_rooftop_image_". $rooftop . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/rooftops/'.$photo_name),100);
+            Rooftop::find($rooftop)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','Rooftop information have been successfully Added.');
+      }
+
+      function list_rooftop(){
+        $lists=Rooftop::all();
+        $trashed_lists=Rooftop::onlyTrashed()->get();
+        return view('Dashboard.rooftop.list_rooftop',compact('lists','trashed_lists'));
+      }
+
+      function rooftop_edit($id){
+        $list=Rooftop::findOrFail($id);
+        return view('Dashboard.rooftop.single_rooftop_list',compact('list'));
+      }
+
+      function rooftop_update(Request $request){
+
+            $rooftop=Rooftop::findOrFail($request->id)->update([
+
+              'address'=>$request->address,
+              'floor_area'=>$request->floor_area,
+              'utilities'=>$request->utilities,
+              'shed'=>$request->shed,
+              'protection'=>$request->protection,
+              'lift'=>$request->lift,
+              'interior_condition'=>$request->interior_condition,
+              'parking'=>$request->parking,
+              'price'=>$request->price,
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_rooftop_image_". $rooftop . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/rooftops/'.$photo_name),100);
+                Rooftop::find($rooftop)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Rooftop information have been successfully Updated.');
+      }
+
+      function rooftop_delete($id){
+          $list=Rooftop::findOrFail($id)->delete();
+          return back();
+        }
+
+      function rooftop_restore($id){
+          Rooftop::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end Rooftop
+
+
+
+
+//begin Restaurant
+      function add_restuarant(){
+        return view('Dashboard.restaurant.add_restaurant');
+      }
+
+      function post_restuarant_information(Request $request){
+
+        $restaurant=Restaurant::insertGetId([
+          'resort_name'=>$request->resort_name,
+          'address'=>$request->address,
+          'room_size'=>$request->room_size,
+          'room_type'=>$request->room_type,
+          'attached_toilet'=>$request->attached_toilet,
+          'utilities'=>$request->utilities,
+          'attached_varanda'=>$request->attached_varanda,
+          'hot_water'=>$request->hot_water,
+          'laundry'=>$request->laundry,
+          'ac'=>$request->ac,
+          'cable_tv'=>$request->cable_tv,
+          'wifi'=>$request->wifi,
+          'lift'=>$request->lift,
+          'furnished'=>$request->furnished,
+          'parking'=>$request->parking,
+          'dining'=>$request->dining,
+          'sports'=>$request->sports,
+          'gym'=>$request->gym,
+          'spa'=>$request->spa,
+          'swimmingpool'=>$request->swimmingpool,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_restaurant_image_". $restaurant . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/restaurants/'.$photo_name),100);
+            Restaurant::find($restaurant)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','restaurant information have been successfully Added.');
+      }
+
+      function list_restuarant(){
+        $lists=Restaurant::all();
+        $trashed_lists=Restaurant::onlyTrashed()->get();
+        return view('Dashboard.restaurant.list_restaurant',compact('lists','trashed_lists'));
+      }
+
+      function restuarant_edit($id){
+        $list=Restaurant::findOrFail($id);
+        return view('Dashboard.restaurant.single_restaurant_list',compact('list'));
+      }
+
+      function restuarant_update(Request $request){
+
+            $restaurant=Restaurant::findOrFail($request->id)->update([
+
+              'resort_name'=>$request->resort_name,
+              'address'=>$request->address,
+              'room_size'=>$request->room_size,
+              'room_type'=>$request->room_type,
+              'attached_toilet'=>$request->attached_toilet,
+              'utilities'=>$request->utilities,
+              'attached_varanda'=>$request->attached_varanda,
+              'hot_water'=>$request->hot_water,
+              'laundry'=>$request->laundry,
+              'ac'=>$request->ac,
+              'cable_tv'=>$request->cable_tv,
+              'wifi'=>$request->wifi,
+              'lift'=>$request->lift,
+              'furnished'=>$request->furnished,
+              'parking'=>$request->parking,
+              'dining'=>$request->dining,
+              'sports'=>$request->sports,
+              'gym'=>$request->gym,
+              'spa'=>$request->spa,
+              'swimmingpool'=>$request->swimmingpool,
+              'price'=>$request->price,
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_restaurant_image_". $restaurant . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/restaurants/'.$photo_name),100);
+                Restaurant::find($restaurant)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','restaurant information have been successfully Updated.');
+      }
+
+      function restuarant_delete($id){
+          $list=Restaurant::findOrFail($id)->delete();
+          return back();
+        }
+
+      function restuarant_restore($id){
+          Restaurant::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end Restaurant
+
+
+
+
+//begin Exibution Center
+      function add_exibution_center(){
+        return view('Dashboard.exibution_center.add_exibution_center');
+      }
+
+      function post_exibution_center_information(Request $request){
+
+        $exibution_center=Exibution_Center::insertGetId([
+          'exibution_center_name'=>$request->exibution_center_name,
+          'address'=>$request->address,
+          'room_size'=>$request->room_size,
+          'room_type'=>$request->room_type,
+          'attached_toilet'=>$request->attached_toilet,
+          'utilities'=>$request->utilities,
+          'attached_varanda'=>$request->attached_varanda,
+          'hot_water'=>$request->hot_water,
+          'laundry'=>$request->laundry,
+          'ac'=>$request->ac,
+          'cable_tv'=>$request->cable_tv,
+          'wifi'=>$request->wifi,
+          'lift'=>$request->lift,
+          'furnished'=>$request->furnished,
+          'parking'=>$request->parking,
+          'dining'=>$request->dining,
+          'sports'=>$request->sports,
+          'gym'=>$request->gym,
+          'spa'=>$request->spa,
+          'swimmingpool'=>$request->swimmingpool,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_exibution_center_image_". $exibution_center . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/exibution_centers/'.$photo_name),100);
+            Exibution_Center::find($exibution_center)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','exibution_center information have been successfully Added.');
+      }
+
+      function list_exibution_center(){
+        $lists=Exibution_Center::all();
+        $trashed_lists=Exibution_Center::onlyTrashed()->get();
+        return view('Dashboard.exibution_center.list_exibution_center',compact('lists','trashed_lists'));
+      }
+
+      function exibution_center_edit($id){
+        $list=Exibution_Center::findOrFail($id);
+        return view('Dashboard.exibution_center.single_exibution_center_list',compact('list'));
+      }
+
+      function exibution_center_update(Request $request){
+
+            $exibution_center=Exibution_Center::findOrFail($request->id)->update([
+
+              'exibution_center_name'=>$request->exibution_center_name,
+              'address'=>$request->address,
+              'room_size'=>$request->room_size,
+              'room_type'=>$request->room_type,
+              'attached_toilet'=>$request->attached_toilet,
+              'utilities'=>$request->utilities,
+              'attached_varanda'=>$request->attached_varanda,
+              'hot_water'=>$request->hot_water,
+              'laundry'=>$request->laundry,
+              'ac'=>$request->ac,
+              'cable_tv'=>$request->cable_tv,
+              'wifi'=>$request->wifi,
+              'lift'=>$request->lift,
+              'furnished'=>$request->furnished,
+              'parking'=>$request->parking,
+              'dining'=>$request->dining,
+              'sports'=>$request->sports,
+              'gym'=>$request->gym,
+              'spa'=>$request->spa,
+              'swimmingpool'=>$request->swimmingpool,
+              'price'=>$request->price,
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_exibution_center_image_". $exibution_center . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/exibution_centers/'.$photo_name),100);
+                Exibution_Center::find($exibution_center)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','exibution_center information have been successfully Updated.');
+      }
+
+      function exibution_center_delete($id){
+          $list=Exibution_Center::findOrFail($id)->delete();
+          return back();
+        }
+
+      function exibution_center_restore($id){
+          Exibution_Center::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end Exibution Center
+
+
+
+
+
+
+//begin play ground
+      function add_playground(){
+        return view('Dashboard.play_ground.add_playground');
+      }
+
+      function post_playground_information(Request $request){
+
+        $playground=Play_ground::insertGetId([
+          'address'=>$request->address,
+          'type'=>$request->type,
+          'attached_toilet'=>$request->attached_toilet,
+          'utilities'=>$request->utilities,
+          'laundry'=>$request->laundry,
+          'change_room'=>$request->change_room,
+          'wifi'=>$request->wifi,
+          'furnished'=>$request->furnished,
+          'ac'=>$request->ac,
+          'parking'=>$request->parking,
+          'dining'=>$request->dining,
+          'sports'=>$request->sports,
+          'gym'=>$request->gym,
+          'spa'=>$request->spa,
+          'swimmingpool'=>$request->swimmingpool,
+          'price'=>$request->price,
+          'photo'=>$request->photo,
+          'created_at'   =>Carbon::now()
+        ]);
+        if ($request->hasFile('photo')) {
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "toletx_play_ground_image_". $playground . "." . $photo_extension;
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/playgrounds/'.$photo_name),100);
+            Play_ground::find($playground)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+
+        return back()->with('success','play_ground information have been successfully Added.');
+      }
+
+      function list_playground(){
+        $lists=Play_ground::all();
+        $trashed_lists=Play_ground::onlyTrashed()->get();
+        return view('Dashboard.play_ground.list_playground',compact('lists','trashed_lists'));
+      }
+
+      function playground_edit($id){
+        $list=Play_ground::findOrFail($id);
+        return view('Dashboard.play_ground.single_playground_list',compact('list'));
+      }
+
+      function playground_update(Request $request){
+
+            $playground=Play_ground::findOrFail($request->id)->update([
+
+              'address'=>$request->address,
+              'type'=>$request->type,
+              'attached_toilet'=>$request->attached_toilet,
+              'utilities'=>$request->utilities,
+              'laundry'=>$request->laundry,
+              'change_room'=>$request->change_room,
+              'wifi'=>$request->wifi,
+              'furnished'=>$request->furnished,
+              'ac'=>$request->ac,
+              'parking'=>$request->parking,
+              'dining'=>$request->dining,
+              'sports'=>$request->sports,
+              'gym'=>$request->gym,
+              'spa'=>$request->spa,
+              'swimmingpool'=>$request->swimmingpool,
+              'price'=>$request->price,
+
+            ]);
+
+
+            if ($request->hasFile('photo')) {
+
+                $photo_upload     =  $request ->photo;
+                $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                $photo_name       =  "toletx_play_ground_image_". $playground . "." . $photo_extension;
+                Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/playgrounds/'.$photo_name),100);
+                Play_ground::find($playground)->update([
+                'photo'          => $photo_name,
+                    ]);
+
+
+                  }
+            return back()->with('success','Play ground information have been successfully Updated.');
+      }
+
+      function playground_delete($id){
+          $list=Play_ground::findOrFail($id)->delete();
+          return back();
+        }
+
+      function playground_restore($id){
+          Play_ground::onlyTrashed()->findOrFail($id)->restore();
+          return back();
+        }
+//end play ground
 }

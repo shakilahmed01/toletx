@@ -24,12 +24,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Billboard Details</h4>
+								<h4>Rooftop Details</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Billboard</li>
+									<li class="breadcrumb-item active" aria-current="page">List Rooftop</li>
 								</ol>
 							</nav>
 						</div>
@@ -65,10 +65,14 @@
 							<tr>
                 <th scope="col">Id</th>
                 <th scope="col">Address</th>
-                <th scope="col">Type</th>
-                <th scope="col">Size</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Electricity</th>
+                <th scope="col">Floor Area</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Protection</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Stair/Lift</th>
+                <th scope="col">Interior Condition</th>
+                <th scope="col">Shed</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -78,18 +82,22 @@
               <tr>
                 <th scope="row">{{$list->id}}</th>
                 <td>{{$list->address}}</td>
-                <td>{{$list->type}}</td>
-                <td>{{$list->size}}</td>
                 <td>{{$list->price}}</td>
-                <td>{{$list->electricity}}</td>
+                <td>{{$list->floor_area}}</td>
+                <td>{{$list->utilities}}</td>
+								<td>{{$list->protection}}</td>
+                <td>{{$list->parking}}</td>
+                <td>{{$list->lift}}</td>
+                <td>{{$list->interior_condition}}</td>
+                <td>{{$list->shed}}</td>
 
                 <td>
-                <img src="{{ asset('uploads/bilboards') }}/{{ $list->photo }}" alt="">
+                <img src="{{ asset('uploads/rooftops') }}/{{ $list->photo }}" alt="">
                 </td>
                 <td>
-                  <a href="{{ url('/bilboard/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+                  <a href="{{ url('/rooftop/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
                   <hr>
-                  <a href="{{ url('bilboard/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
+                  <a href="{{ url('rooftop/delete') }}/{{ $list->id }}" onclick="confirmAction()" class=" btn-sm btn-danger">Delete</a>
 
                 </td>
               </tr>
@@ -115,10 +123,14 @@
 							<tr>
                 <th scope="col">Id</th>
                 <th scope="col">Address</th>
-                <th scope="col">Type</th>
-                <th scope="col">Size</th>
                 <th scope="col">Asking Rent/Cost + Service Charge</th>
-                <th scope="col">Electricity</th>
+                <th scope="col">Floor Area</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Protection</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Stair/Lift</th>
+                <th scope="col">Interior Condition</th>
+                <th scope="col">Shed</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
 							</tr>
@@ -128,17 +140,21 @@
 							<tr>
 								<th scope="row">{{$trashed_list->id}}</th>
                 <td>{{$trashed_list->address}}</td>
-                <td>{{$trashed_list->type}}</td>
-                <td>{{$trashed_list->size}}</td>
                 <td>{{$trashed_list->price}}</td>
-                <td>{{$trashed_list->electricity}}</td>
+                <td>{{$trashed_list->floor_area}}</td>
+                <td>{{$trashed_list->utilities}}</td>
+								<td>{{$trashed_list->protection}}</td>
+                <td>{{$trashed_list->parking}}</td>
+                <td>{{$trashed_list->lift}}</td>
+                <td>{{$trashed_list->interior_condition}}</td>
+                <td>{{$trashed_list->shed}}</td>
 
 								<td>
-								<img src="{{ asset('uploads/bilboards') }}/{{ $trashed_list->photo }}" alt="">
+								<img src="{{ asset('uploads/rooftops') }}/{{ $trashed_list->photo }}" alt="">
 								</td>
 								<td>
 
-									<a href="{{ url('bilboard/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
+									<a href="{{ url('rooftop/restore') }}/{{ $trashed_list->id }}" class=" btn-sm btn-success">Restore</a>
 								</td>
 							</tr>
 					@endforeach

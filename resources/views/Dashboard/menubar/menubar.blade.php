@@ -168,11 +168,11 @@
         </li>
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle">
-            <span class="micon dw dw-library"></span><span class="mtext">Restaurant</span>
+            <span class="micon dw dw-library"></span><span class="mtext">Resort</span>
           </a>
           <ul class="submenu">
-            <li><a href="{{route('add_restuarant')}}">Add Restaurant</a></li>
-            <li><a href="{{route('list_restuarant')}}">List Restaurant</a></li>
+            <li><a href="{{route('add_restuarant')}}">Add Resort</a></li>
+            <li><a href="{{route('list_restuarant')}}">List Resort</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -189,8 +189,8 @@
             <span class="micon dw dw-library"></span><span class="mtext">Exibution Center</span>
           </a>
           <ul class="submenu">
-            <li><a href="{{route('add_exibutioncenter')}}">Add Exibution Center</a></li>
-            <li><a href="{{route('list_exibutioncenter')}}">List Exibution Center</a></li>
+            <li><a href="{{route('add_exibution_center')}}">Add Exibution Center</a></li>
+            <li><a href="{{route('list_exibution_center')}}">List Exibution Center</a></li>
           </ul>
         </li>
         <li class="dropdown">

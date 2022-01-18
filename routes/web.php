@@ -255,12 +255,12 @@ Route::get('/playground/restore/{id}',[App\Http\Controllers\DashboardController:
 //end playground
 
 //begin exibutioncenter
-Route::get('/add/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'add_exibutioncenter'])->name('add_exibutioncenter');
-Route::get('/list/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'list_exibutioncenter'])->name('list_exibutioncenter');
-Route::post('/post/exibutioncenter', [App\Http\Controllers\DashboardController::class, 'post_exibutioncenter_information'])->name('post_exibutioncenter_information');
-Route::get('/exibutioncenter/edit/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_edit'])->name('exibutioncenter_edit');
-Route::post('/exibutioncenter/update',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_update'])->name('exibutioncenter_update');
-Route::get('/exibutioncenter/delete/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_delete'])->name('exibutioncenter_delete');
-Route::get('/exibutioncenter/restore/{id}',[App\Http\Controllers\DashboardController::class, 'exibutioncenter_restore'])->name('exibutioncenter_restore');
+Route::get('/add/exibution_center', [App\Http\Controllers\DashboardController::class, 'add_exibution_center'])->name('add_exibution_center');
+Route::get('/list/exibution_center', [App\Http\Controllers\DashboardController::class, 'list_exibution_center'])->name('list_exibution_center');
+Route::post('/post/exibution_center', [App\Http\Controllers\DashboardController::class, 'post_exibution_center_information'])->name('post_exibution_center_information');
+Route::get('/exibutioncenter/edit/{id}',[App\Http\Controllers\DashboardController::class, 'exibution_center_edit'])->name('exibution_center_edit');
+Route::post('/exibutioncenter/update',[App\Http\Controllers\DashboardController::class, 'exibution_center_update'])->name('exibution_center_update');
+Route::get('/exibutioncenter/delete/{id}',[App\Http\Controllers\DashboardController::class, 'exibution_center_delete'])->name('exibution_center_delete');
+Route::get('/exibutioncenter/restore/{id}',[App\Http\Controllers\DashboardController::class, 'exibution_center_restore'])->name('exibution_center_restore');
 //end exibutioncenter
 //end Admin

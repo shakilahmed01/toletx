@@ -5,21 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Rooftop extends Model
+class Exibution_Center extends Model
 {
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [
+        'resort_name',
         'address',
-        'floor_area',
+        'room_type',
+        'room_size',
         'utilities',
-        'protection',
+        'attached_toilet',
+        'attached_varanda',
+        'hot_water',
+        'laundry',
+        'ac',
+        'cable_tv',
+        'wifi',
         'lift',
-        'interior_condition',
-        'shed',
+        'furnished',
         'parking',
+        'dining',
+        'spa',
+        'gym',
+        'sports',
+        'swimmingpool',
         'price',
         'photo',
-
     ];
 }

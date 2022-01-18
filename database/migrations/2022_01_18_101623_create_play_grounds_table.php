@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRestaurantsTable extends Migration
+class CreatePlayGroundsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,18 @@ class CreateRestaurantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('restaurants', function (Blueprint $table) {
+        Schema::create('play_grounds', function (Blueprint $table) {
             $table->id();
-            $table->string('resort_name');
             $table->string('address');
-            $table->string('room_size');
-            $table->string('room_type');
+            $table->string('type');
             $table->string('wifi')->nullable();
             $table->string('attached_toilet')->nullable();
             $table->string('utilities')->nullable();
             $table->string('lift')->nullable();
             $table->string('furnished')->nullable();
-            $table->string('attached_varanda')->nullable();
-            $table->string('hot_water')->nullable();
             $table->string('laundry')->nullable();
+            $table->string('change_room')->nullable();
             $table->string('ac')->nullable();
-            $table->string('cable_tv')->nullable();
             $table->string('parking')->nullable();
             $table->string('dining')->nullable();
             $table->string('spa')->nullable();
@@ -49,6 +45,6 @@ class CreateRestaurantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('restaurants');
+        Schema::dropIfExists('play_grounds');
     }
 }
